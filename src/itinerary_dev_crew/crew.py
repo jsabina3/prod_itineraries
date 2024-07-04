@@ -4,7 +4,6 @@ from itinerary_dev_crew.tools.serper_tool import CustomSerperDevTool
 from itinerary_dev_crew.tools.youtube_tool import YoutubeVideoSearchTool
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
