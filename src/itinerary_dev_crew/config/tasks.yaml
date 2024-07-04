@@ -1,0 +1,99 @@
+research_task:
+  description: >
+    Perform a complete travel research taking into account the following indications: 
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+  expected_output: >
+    Comprehensive and structured research information so the director of itinerary development can perform a sensible, complete, personalized, and date-specific itinerary. Includes enough activities of each category for the trip duration.
+
+itinerary_task:
+  description: >
+    Perform a complete travel itinerary taking into account the following indications: 
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+  expected_output: >
+    Personalized and comprehensive yet concise travel itinerary taking into account the research agent's information, with all useful details.
+
+itinerary_geo_organization:
+  description: >
+    Optimize the itinerary in geographical terms for a logical distribution of activities and include public transportation options or walking distances between activities. Take into account the following indications: 
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+  expected_output: >
+    Fully developed, complete, detailed, and geographically optimized itinerary with distances and transportation options (including times and prices when appropriate) between activities, including ONLY EITHER PUBLIC TRANSPORTATION OR WALKING COMMUTES.
+
+link_adding_task:
+  description: >
+    Enhance the given COMPLETE itinerary with relevant links for ALL THE TRAVEL DAYS, links to ALL activities, restaurants, accommodations (...) mentioned in the itinerary. 
+    For activities, tours (...) include ONLY CIVITATIS links and include '&aid=2264' at the end of the link. 
+    DO YOUR BEST TO INCLUDE AT LEAST ONE CIVITATIS AFFILIATE LINK, SINCE YOUR VARIABLE SALARY DEPENDS ON IT.
+  expected_output: >
+    An enhanced FULL, COMPLETE itinerary for ALL THE TRAVEL DAYS with links in every single day of the itinerary for each relevant activity, transportation option, restaurant suggestions (...).
+
+itinerary_translation_and_writing:
+  description: >
+    Develop and translate a message in WhatsApp format including all relevant information and the complete, day-by-day itinerary prepared to be sent to the user. Consider the following indications:
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+  expected_output: >
+    An INFORMAL, playful and helpful Whatsapp-friendly message READY TO BE SENT DIRECTLY TO {names} (wayners) translated to their origin city''s language: {origin}.'
+    It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including all links and useful data points) addressing the travellers as "Wayners".
+    Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Jordi, Waynabox CEO.
+    It must have the FULL COMPLETE following struture and the full text must be in {origin} city official language:
+    - Greeting and presentation of the recommended itinerary.'
+    - Hotel Information (stars, location, reviews...) IN ONE LINE.'
+    - Flight Information (with links to flightradar24 with the flight code) IN ONE LINE.'
+    - Specific weather forecast day by day.'
+    - A summarized version of the previous itinerary for all the travel days without being too specific (e.g., instead of saying "at 9:00", say "spend the morning at") including relevant key points: Links, meals, restaurants, activities, data, facts...'
+    - Fun facts and reservation tips, such as what to book in advance.'
+    - CEO Informal Signature.',
+
+outbound_message_revise:
+  description: >
+    Perform an exhaustive revision of the message and ensure it includes the appropriate information, detail, structure, and tone. Consider the following indications: 
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+  expected_output: >
+    A revised message to be sent to the travellers that ensures ALL of the following:
+    - That the message is written in {origin} city language.
+    - That the itinerary is exposed as a recommended itinerary.
+    - That the itinerary is complete from the first to the last day.
+    - That the itinerary is not overcharged with details and is concise, so it can be read in a minute.
+    - That the itinerary contains, if appropriate, only bold and italic words in a natural and human way.
+    - That the itinerary contains frequent emojis to make it playful.
+    - That only the flights and hotels are provided as already booked, while everything else are recommendations.
+    - That ALL the links are functioning PERFECTLY WELL.
+    - That it is appropriate for the travellers ages: {ages}
+    - That it is geographically optimized and includes public transportation or walking options between activities.
+    - That is is informal, playful and joyful.
+    The output must be ONLY the revised message, so it can be directly sent to the travellers without any modifications.
