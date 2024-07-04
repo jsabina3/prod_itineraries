@@ -2,7 +2,6 @@
 import argparse
 from itinerary_dev_crew.crew import ItineraryDevCrewCrew
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
