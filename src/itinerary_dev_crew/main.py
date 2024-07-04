@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-os.getenv('OPENAI_MODEL_NAME')
-os.getenv('OPENAI_API_KEY')
 
 def get_inputs_from_args(args):
     return {
