@@ -22,7 +22,7 @@ class ItineraryDevCrewCrew():
 			tools=[CustomSerperDevTool(), YoutubeVideoSearchTool()],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0.1)
+			llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.01)
 		)
 
 	@agent
@@ -31,7 +31,7 @@ class ItineraryDevCrewCrew():
 			config=self.agents_config['itinerary_developer'],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0)
+			llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.1)
 		)
 
 	@agent
@@ -41,7 +41,7 @@ class ItineraryDevCrewCrew():
 			tools=[CustomSerperDevTool()],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0.05)
+			llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.05)
 		)
 
 	@agent
@@ -51,7 +51,7 @@ class ItineraryDevCrewCrew():
 			tools=[CustomSerperDevTool()],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0.05)
+			llm=ChatOpenAI(model='gpt-4o-mini', temperature=0)
 		)
 
 	@agent
@@ -60,16 +60,7 @@ class ItineraryDevCrewCrew():
 			config=self.agents_config['itinerary_translator_and_writer'],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0.15)
-		)
-
-	@agent
-	def message_reviser(self) -> Agent:
-		return Agent(
-			config=self.agents_config['message_reviser'],
-			verbose=True,
-			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0)
+			llm=ChatOpenAI(model='gpt-4o', temperature=0.1)
 		)
 
 	@task
@@ -105,13 +96,6 @@ class ItineraryDevCrewCrew():
 		return Task(
 			config=self.tasks_config['itinerary_translation_and_writing'],
 			agent=self.itinerary_translator_and_writer()
-		)
-
-	@task
-	def outbound_message_revise(self) -> Task:
-		return Task(
-			config=self.tasks_config['outbound_message_revise'],
-			agent=self.message_reviser()
 		)
 
 	@crew
