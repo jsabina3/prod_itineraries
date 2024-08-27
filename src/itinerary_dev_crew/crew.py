@@ -60,7 +60,7 @@ class ItineraryDevCrewCrew():
 			config=self.agents_config['itinerary_translator_and_writer'],
 			verbose=True,
 			allow_delegation=False,
-			llm=ChatOpenAI(model='gpt-4o', temperature=0.1)
+			llm=ChatOpenAI(model='gpt-4o-2024-08-06', temperature=0.1)
 		)
 
 	@task
