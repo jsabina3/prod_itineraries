@@ -99,7 +99,9 @@ PR_adaptation:
     Make sure it contains A LOT of emojis and textual techniques to make it extremely engaging and appealing.
     Ensure the traveller understands that it is a recommended itinerary and none of the mentioned restaurants or activities are booked, they are just recommendations.
     IMPORTANT: THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
-    IMPORTANT: USE BOLD VERY CAUTIOUSLY: ONLY FOR THE MOST IMPORTANT TITLES AND THE SCHEDULE TIMES TO HELP THE READER. NOWHERE ELSE.
+    IMPORTANT: USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
+    DIVIDE THE DAYS STARTING EACH DAY WITH **DAY 1**, **DAY 2**, **DAY 3**. USE BOLD THERE AND IN THE HOURS.
+    DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. NOWHERE ELSE.
     IMPORTANT: USE BULLET POINTS.
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
   expected_output: >
