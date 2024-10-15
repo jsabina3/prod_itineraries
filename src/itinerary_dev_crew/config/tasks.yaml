@@ -16,7 +16,7 @@ research_task:
 
 itinerary_task:
   description: >
-    Perform a complete travel itinerary taking into account the following indications: 
+    Perform a complete travel itinerary taking into account the following indications:
     
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
@@ -25,23 +25,26 @@ itinerary_task:
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
     {flight_data}. 
     Only hotel and flights are booked, any other activity is not booked yet.
+    PRIORITIZE THE TOP 3 ACTIVITIES OFFERED BY CIVITATIS WHERE POSSIBLE, UNLESS WEATHER, TRAVELLER DEMOGRAPHICS.
+    FOR OTHER ACTIVITIES, DO NOT MENTION CIVITATIS.
+    AVOID DUPLICATING ACTIVITIES OR SIMILAR ONES (one or more similar words).
     DO NOT INCLUDE LINKS.
     DO NOT INVENT ANY INFORMATION.
     YOUR MUST MAKE LUNCH AND DINNER TIMES ADEQUATE FOR THE TRAVELLERS' DEPARTURE CITY CULTURE (for instance, those departing from Spanish have lunch at 14 and dinner at 21).
     IMPORTANT: EVERY ELEMENT OF THE ITINERARY MUST BE JUSTIFIED WITH THE WEATHER FORECAST AND TRAVELLERS' AGES.
     ASSUME THAT HOTEL CHECK-IN TIME IS 15:00 FOR THE ITINERARY. HOWEVER, LUGGAGE MAY BE LEFT IN THE HOTEL BEFORE CHECK-IN TIME.
-    INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS AND TRANSPORTATION OPTIONS
-
+    INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS AND TRANSPORTATION OPTIONS.
   expected_output: >
-    Personalized and comprehensive travel itinerary using the information collected by the research agent.
+    Personalized and comprehensive travel itinerary using the information collected by the research agent, prioritizing Civitatis activities, and ensuring no duplicate or similar activities are included.
     It must contain the following structure:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
     - Specific weather forecast day by day.
-    - Extensive, complete itinerary.
+    - Extensive, complete itinerary with prioritized Civitatis activities.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
+
 
 itinerary_geo_organization:
   description: >
@@ -101,9 +104,10 @@ PR_adaptation:
     IMPORTANT: THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
     IMPORTANT: USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
     DIVIDE THE DAYS STARTING EACH DAY WITH **DAY 1**, **DAY 2**, **DAY 3**. USE BOLD THERE AND IN THE HOURS.
-    DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. NOWHERE ELSE.
+    DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. ABSOLUTELY NOWHERE ELSE.
     IMPORTANT: USE BULLET POINTS.
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
+    IMPORTANT: YOU MUST ABSOLUTELY ALWAYS INCLUDE AT LEAST 2 CIVITATIS LINKS WITH THE ACTIVITIES.
   expected_output: >
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
@@ -112,8 +116,9 @@ PR_adaptation:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
-    - Specific weather forecast day by day.
-    - Extensive, complete itinerary, with ALL THE DETAILS FROM THE PREVIOUS ITINERARY.
+    - Specific weather forecast day by day. USE ACCUWEATHER TO ENSURE THE WEATHER IS CORRECT. 
+    - Extensive, complete itinerary, with ALL THE DETAILS FROM THE PREVIOUS ITINERARY. CIVITATIS LINKS MUST BE INCLUDED.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
+    IMPORTANT: BOLD MUST ONLY BE USED IN THE TITLES OF SECTIONS, TITLES OF DAYS AND THE SPECIFIC HOURS.
     IMPORTANT: IT MUST ALWAYS ALWAYS ALWAYS INCLUDE A DISCLAIMER (NOT IN BOLD) THAT SAYS THAT NONE OF THE MENTIONED RESTAURANTS OR ACTIVITIES ARE BOOKED, THEY ARE JUST RECOMMENDATIONS.
