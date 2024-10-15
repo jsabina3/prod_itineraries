@@ -3,6 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from itinerary_dev_crew.tools.serper_tool import CustomSerperDevTool
 from itinerary_dev_crew.tools.accuweather_tool import AccuWeatherTool
 from itinerary_dev_crew.tools.exasearch_tool import ExaSearchTool
+from itinerary_dev_crew.tools.civitatis_activity_tool import CivitatisActivityTool
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
@@ -28,6 +29,7 @@ class ItineraryDevCrewCrew():
 	def itinerary_developer(self) -> Agent:
 		return Agent(
 			config=self.agents_config['itinerary_developer'],
+			tools = [CivitatisActivityTool()],
 			verbose=True,
 			allow_delegation=False,
 			llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.1)
@@ -56,6 +58,7 @@ class ItineraryDevCrewCrew():
 	def PR_director(self) -> Agent:
 		return Agent(
 			config=self.agents_config['PR_director'],
+			tools=[CivitatisActivityTool(), AccuWeatherTool()],
 			verbose=True,
 			allow_delegation=False,
 			llm=ChatOpenAI(model='gpt-4o-2024-08-06', temperature=0.15)
