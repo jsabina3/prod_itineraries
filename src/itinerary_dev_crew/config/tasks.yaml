@@ -59,9 +59,10 @@ itinerary_geo_organization:
     Only hotel and flights are booked, any other activity is not booked yet.
     IT IS ESPECIALLY IMPORTANT TO INCLUDE DIRECTIONS TO THE HOTEL FROM THE AIRPORT AND FROM THE AIRPORT TO THE HOTEL.
     DO NOT INVENT ANY INDICATION.
+    MAKE SURE THE TRAVELLER GETS TO THE AIRPORT 2 HOURS BEFORE THE FLIGHT DEPARTS. 
   expected_output: >
     Fully developed, complete, detailed, and geographically optimized itinerary with distances and transportation options (including times and prices when appropriate) between activities, including ONLY PUBLIC TRANSPORTATION, NEVER INCLUDING TAXI OR PRIVATE SHUTTLES.
-    IT MUST CONTAIN RESEARCHED PUBLIC TRANSPORTATION OPTIONS BETWEEN EACH AND EVERY LOCATION OF THE ITINERARY.
+    IT MUST CONTAIN RESEARCHED PUBLIC TRANSPORTATION OPTIONS BETWEEN EACH AND EVERY LOCATION OF THE ITINERARY. THE TRAVELLER MUST GET TO THE AIRPORT 2 HOURS BEFORE THE FLIGHT DEPARTS. 
     It must contain the following structure WITH ALL THE PREVIOUS INFORMATION:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
