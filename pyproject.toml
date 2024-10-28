@@ -1,0 +1,23 @@
+[project]
+name = "itinerary_dev_crew"
+version = "0.1.0"
+description = "itinerary-dev-crew using crewAI"
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.35.8",
+    "requests2.32.3",
+    "langchain-openai>=0.1",
+]
+
+[project.scripts]
+itinerary_dev_crew = "itinerary_dev_crew.main:main"
+run_crew = "itinerary_dev_crew.main:run"
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
