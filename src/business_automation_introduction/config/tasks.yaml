@@ -1,0 +1,137 @@
+gather_viator_data_task:
+  description: Fetch activities and tours available at {destination} during {start_date}
+    to {end_date} from Viator taking into account the travellers ages ({ages}).
+  expected_output: A table of activities with ALL THE FOLLOWING FIELDS WITH ONE ROW FOR EACH PRODUCT OPTION OF EACH PRODUCT;
+    - Title
+    - Description
+    - Duration
+    - Product Option
+    - Base Pricing
+    - Rating
+    - Flags
+    - Link with the Spanish tag (just add 'es-ES/' after 'viator.com/')
+    - Availability and Pricing
+  async_execution: false
+  agent: research_agent
+
+fetch_weather_data_task:
+  description: Get a 5-day weather forecast for {destination}.
+  expected_output: Daily weather forecasts for {destination} for the following 5 days.
+  async_execution: false
+  agent: research_agent
+
+web_search_additional_research_task:
+  description: Use WebsiteSearchTool to find additional information in {destination} that match traveler interests taking into account their ages ({ages} years old).
+  expected_output: A truthful and complete list covering the following categories;
+    1) Generic information about the destination.
+    2) Cultural activities to do in the destination (museum visits, galleries, exhibitions, concerts...) from {start_date} to {end_date} and reviews.
+    3) Best areas to explore by feet.
+    4) Hidden gems off-the-beaten-track.
+    5) Generic tips and cultural norms.
+    6) 5 breakfast, 5 inexpensive and 5 mid-range but top-rated restaurants with review scores and estimated price per person.
+    7) Nightlife activities according to the travellers ages ({ages}) with reviews.
+    8) 5 Fun facts about the destination.
+    9) Key data about the {hotel_name} (stars, ratings and location). ASSUME THAT CHECK-IN IS AT 15:00 AND CHECK-OUT AT 10:00.
+  async_execution: false
+  agent: research_agent
+
+itinerary_task:
+  description: >
+    Perform a complete travel itinerary taking into account the following indications:
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    
+    Only hotel and flights are booked, any other activity is not booked yet.
+    PRIORITIZE THE TOP 3 ACTIVITIES OFFERED BY VIATOR WHERE POSSIBLE, ALWAYS INCLUDING LINK, PRICE AND RATINGS AND TAKING INTO ACCOUNT AVAILABILITY.
+    IF THERE IS LITTLE AVAILABILITY FOR ANY VIATOR ACTIVITY, LET THE TRAVELLER KNOW.
+    AVOID DUPLICATING ACTIVITIES OR SIMILAR ONES (one or more similar words).
+    DO NOT INVENT ANY INFORMATION.
+    YOU MUST MAKE LUNCH AND DINNER TIMES ADEQUATE FOR THE TRAVELLERS' DEPARTURE CITY CULTURE (for instance, those departing from Spanish have lunch at 14 and dinner at 21).
+    IMPORTANT: EVERY ELEMENT OF THE ITINERARY MUST BE JUSTIFIED WITH THE WEATHER FORECAST AND TRAVELLERS' AGES.
+    ASSUME THAT HOTEL CHECK-IN TIME IS 15:00 FOR THE ITINERARY. HOWEVER, LUGGAGE MAY BE LEFT IN THE HOTEL BEFORE CHECK-IN TIME.
+    INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS.
+    TAKE INTO ACCOUNT DISTANCES BETWEEN PLACES AND ACTIVITIES.
+  expected_output: >
+    Personalized and comprehensive travel itinerary using the information collected by the research agent, prioritizing Viator activities, and ensuring no duplicate or similar activities are included.
+    It must contain the following structure:
+    - Greeting and presentation of the recommended itinerary.
+    - Hotel Information (stars, location, reviews...).
+    - Flight Information.
+    - Specific weather forecast day by day. 
+    - Extensive, complete itinerary with prioritized Viator activities with clickable links. 
+    - Fun facts and top tips, such as what to book in advance.
+    - Olga Informal Signature.
+  context:
+  - gather_viator_data_task
+  - fetch_weather_data_task
+  - web_search_additional_research_task
+  agent: itinerary_developer
+
+directions_task:
+  description: >
+    Get directions and distances between ALL the locations in the itinerary. 
+    Take into account that any direction at the beginning of the day is from the traveller's hotel.
+    ALWAYS include detailed directions from and to the airport.
+    Include distances and links but never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
+  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT.
+  async_execution: false
+  agent: research_agent
+
+itinerary_translation_and_writing:
+  description: >
+    Develop a message in WhatsApp format in {origin}'s language keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
+    
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
+    {destination} between {start_date} arriving at {flight_outward_arrival_time} 
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
+    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
+    {flight_data}. 
+    Only hotel and flights are booked, any other activity is not booked yet.
+    DO NOT INVENT ANY INFORMATION.
+  expected_output: >
+    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
+    It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
+    Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
+    - Greeting and presentation of the recommended itinerary.
+    - Hotel Information (stars, location, reviews...).
+    - Flight Information.
+    - Specific weather forecast day by day. YOU MUST KEEP THE WEATHER FROM THE PREVIOUS ITINERARY.
+    - Extensive, complete itinerary, with ALL THE DETAILS FROM THE PREVIOUS ITINERARY.
+    - Fun facts and top tips, such as what to book in advance.
+    - Olga Informal Signature.
+  agent: itinerary_translator_and_writer
+
+PR_adaptation:
+  description: >
+    Improve the message to make it extremely beautiful and engaging while keeping all the details.
+    Make sure it contains A LOT of emojis and textual techniques to make it extremely engaging and appealing.
+    Ensure the traveller understands that it is a recommended itinerary and none of the mentioned restaurants or activities are booked, they are just recommendations.
+    IMPORTANT: THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
+    IMPORTANT: USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
+    DIVIDE THE DAYS STARTING EACH DAY WITH **DAY 1**, **DAY 2**, **DAY 3**. USE BOLD THERE AND IN THE HOURS.
+    DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. ABSOLUTELY NOWHERE ELSE.
+    IMPORTANT: USE BULLET POINTS.
+    IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
+    IMPORTANT: YOU MUST ABSOLUTELY ALWAYS INCLUDE AT LEAST 2 VIATOR LINKS WITH THE ACTIVITIES.
+  expected_output: >
+    A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
+    It must be really appealing, eye-catching and contain A TON OF EMOJIS.
+    It must seem written by a human expert.
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
+    - Greeting and presentation of the recommended itinerary.
+    - Hotel Information (stars, location, reviews...).
+    - Flight Information.
+    - Specific weather forecast day by day. YOU MUST KEEP THE WEATHER FROM THE PREVIOUS ITINERARY.
+    - Extensive, complete itinerary, with ALL THE DETAILS FROM THE PREVIOUS ITINERARY. VIATOR LINKS MUST BE INCLUDED.
+    - Fun facts and top tips, such as what to book in advance.
+    - Olga Informal Signature.
+    IMPORTANT: BOLD MUST ONLY BE USED IN THE TITLES OF SECTIONS, TITLES OF DAYS AND THE SPECIFIC HOURS.
+    IMPORTANT: IT MUST ALWAYS ALWAYS ALWAYS INCLUDE A DISCLAIMER (NOT IN BOLD) THAT SAYS THAT NONE OF THE MENTIONED RESTAURANTS OR ACTIVITIES ARE BOOKED, THEY ARE JUST RECOMMENDATIONS.
+  agent: PR_director

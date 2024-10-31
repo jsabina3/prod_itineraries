@@ -1,23 +1,20 @@
 [project]
-name = "itinerary_dev_crew"
+name = "business_automation_introduction"
 version = "0.1.0"
-description = "itinerary-dev-crew using crewAI"
-authors = [
-    { name = "Your Name", email = "you@example.com" },
-]
+description = "business_automation_introduction using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.35.8",
-    "requests2.32.3",
-    "langchain-openai>=0.1",
+    "crewai[tools]>=0.76.2,<1.0.0"
 ]
 
 [project.scripts]
-itinerary_dev_crew = "itinerary_dev_crew.main:main"
-run_crew = "itinerary_dev_crew.main:run"
+business_automation_introduction = "business_automation_introduction.main:run"
+run_crew = "business_automation_introduction.main:run"
+train = "business_automation_introduction.main:train"
+replay = "business_automation_introduction.main:replay"
+test = "business_automation_introduction.main:test"
 
 [build-system]
-requires = [
-    "hatchling",
-]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
