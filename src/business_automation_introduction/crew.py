@@ -4,6 +4,7 @@ from crewai_tools import WebsiteSearchTool
 from business_automation_introduction.tools.accuweather_tool import AccuWeatherTool
 from business_automation_introduction.tools.viator_activity_tool import ViatorTopProductsTool
 from business_automation_introduction.tools.distance_matrix_tool import LocationStatusDistanceTool
+from business_automation_introduction.tools.perplexity_tool import RealTimeSearchTool
 from langchain_openai import ChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_anthropic import ChatAnthropic
@@ -44,6 +45,14 @@ class BusinessAutomationIntroductionCrew():
             allow_delegation=False
         )
 
+    @agent
+    def Itinerary_Director(self) -> Agent:
+        return Agent(
+            config=self.agents_config['Itinerary_Director'],
+            verbose=True,
+            allow_delegation=False
+        )
+
     @task
     def gather_viator_data_task(self) -> Task:
         return Task(
@@ -52,7 +61,7 @@ class BusinessAutomationIntroductionCrew():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.05)
+            llm=ChatOpenAI(model='o1-mini', temperature=0)
         )
 
     @task
@@ -74,7 +83,18 @@ class BusinessAutomationIntroductionCrew():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatGroq(model='llama-3.2-90b-text-preview', temperature=0.10)
+            llm=ChatGroq(model='llama-3.2-90b-text-preview', temperature=0.05)
+        )
+
+    @task
+    def date_specific_events_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['date_specific_events_task'],
+            tools=[RealTimeSearchTool()],
+            verbose=True,
+            allow_delegation=False,
+            async_execution=False,
+            llm=ChatOpenAI(model = 'gpt-4o', temperature = 0.05)
         )
 
     @task
@@ -85,7 +105,7 @@ class BusinessAutomationIntroductionCrew():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'o1-preview')
+            llm = ChatOpenAI(model = 'o1-preview', temperature = 0.1)
         )
 
     @task
@@ -104,7 +124,7 @@ class BusinessAutomationIntroductionCrew():
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm=ChatOpenAI(model = 'gpt-4o', temperature = 0.05)
+            llm=ChatOpenAI(model = 'gpt-4o', temperature = 0)
         )
 
     @task
@@ -113,6 +133,13 @@ class BusinessAutomationIntroductionCrew():
             config=self.tasks_config['PR_adaptation'],
             llm = ChatAnthropic(model = 'claude-3-5-sonnet-20241022',
                                 temperature = 0)
+        )
+
+    @task
+    def Itinerary_Curation(self) -> Task:
+        return Task(
+            config=self.tasks_config['Itinerary_Curation'],
+            llm = ChatOpenAI(model = 'o1-preview')
         )
 
     @crew

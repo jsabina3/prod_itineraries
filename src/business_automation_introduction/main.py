@@ -7,19 +7,20 @@ def run():
     Run the crew.
     """
     inputs = {
+        'code': 'HBFR34',
         'names': 'Javi,Raquel',
         'num_travelers': '2',
         'origin': 'Madrid',
-        'destination': 'Paris',
-        'hotel_name': 'Melia Champs Elysees',
-        'hotel_address': 'Champs Elysees',
-        'flight_outward_arrival_time': '12:10',
+        'destination': 'Amsterdam',
+        'hotel_name': 'INNSiDE by Meliá Amsterdam',
+        'hotel_address': 'Eduard van Beinumstraat 40, 1077 CZ Amsterdam, Netherlands',
+        'flight_outward_arrival_time': '09:40',
         'breakfast_included': 'Yes',
         'flight_return_departure_time': '19:00',
         'ages': '24,24',
-        'start_date': '2024-11-01',
-        'end_date': '2024-11-03',
-        'flight_data': 'Outward W46012 | Return W46013'
+        'start_date': '2024-11-05',
+        'end_date': '2024-11-07',
+        'flight_data': 'Outward UX1091 departing at 7:05 from Madrid-Barajas and arriving at 9:40 at Ámsterdam Schiphol | Return UX1094 departing at 19:00 from Ámsterdam Schiphol and arriving at 21:40 at Madrid-Barajas'
     }
     BusinessAutomationIntroductionCrew().crew().kickoff(inputs=inputs)
 
@@ -39,8 +40,8 @@ def train():
         'breakfast_included': 'Yes',
         'flight_return_departure_time': '19:00',
         'ages': '24,24',
-        'start_date': '2024-11-01',
-        'end_date': '2024-11-03',
+        'start_date': '2024-11-04',
+        'end_date': '2024-11-07',
         'flight_data': 'Outward W46012 | Return W46013'
     }
     try:
