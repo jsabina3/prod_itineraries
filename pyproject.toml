@@ -5,7 +5,10 @@ description = "business_automation_introduction using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.76.2,<1.0.0"
+    "crewai[tools]>=0.76.2,<1.0.0",
+    "langchain-anthropic>=0.2.4",
+    "langchain-groq>=0.2.1",
+    "langchain-openai>=0.2.4",
 ]
 
 [project.scripts]
