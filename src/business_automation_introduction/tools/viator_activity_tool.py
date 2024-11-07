@@ -91,7 +91,6 @@ class ViatorTopProductsTool(BaseTool):
 
             # Step 3: Get availability for each specific product
             for i in range(len(products)):
-                print(f"Fetching availability of product {product_data[i]['product_code']}")
                 url = f"https://api.viator.com/partner/availability/schedules/{product_data[i]['product_code']}"
                 response_availability = requests.get(url, headers=headers)
                 response_availability.raise_for_status()
@@ -108,14 +107,12 @@ class ViatorTopProductsTool(BaseTool):
                     for season in bookable_item.get('seasons', []):
                         # Handle missing 'startDate' and 'endDate'
                         if "startDate" not in season:
-                            print(f"Skipping season in product option {product_option_code} due to missing startDate.")
                             continue
                         if "endDate" not in season:
                             # Set endDate to startDate + 384 days
                             start_date_obj = datetime.strptime(season['startDate'], "%Y-%m-%d")
                             end_date_obj = start_date_obj + timedelta(days=384)
                             season['endDate'] = end_date_obj.strftime("%Y-%m-%d")
-                            print(f"Set missing endDate to {season['endDate']} for season in product option {product_option_code}")
 
                         # Check if season overlaps with requested dates
                         if season['startDate'] <= end_date and season['endDate'] >= start_date:
@@ -123,7 +120,6 @@ class ViatorTopProductsTool(BaseTool):
                             season_with_code['productOptionCode'] = product_option_code
                             # Add each season data to the product option's list
                             product_options_availability[product_option_code].append(season_with_code)
-                            print(f"Processed season in product option {product_option_code}")
 
                 # Now process the availabilities for each product option separately
                 product_availabilities = {}
@@ -164,7 +160,6 @@ class ViatorTopProductsTool(BaseTool):
                                     timed_entries = record.get("timedEntries", [])
                                     if not timed_entries:
                                         # Handle case when timedEntries is missing or empty
-                                        print(f"No timed entries for date {date_str} in product option {product_option_code}")
                                         continue
 
                                     for timed_entry in timed_entries:
@@ -186,7 +181,6 @@ class ViatorTopProductsTool(BaseTool):
                                                     prices[ageBand] = price
                                             if not prices:
                                                 # Handle missing pricingDetails
-                                                print(f"Missing pricing details for start time {start_time} on date {date_str} in product option {product_option_code}")
                                                 continue
                                             # Check for conflicts
                                             if start_time in available_times:
@@ -206,17 +200,10 @@ class ViatorTopProductsTool(BaseTool):
                                 result[date_str].update(available_times)
 
                     if result:
-                        print(f"Availability data generated for product option {product_option_code}")
-                        # Store the result in the dictionary using productOptionCode as the key
                         product_availabilities[product_option_code] = result
-                        print(f"Added availability for product option {product_option_code} to main dictionary")
-                    else:
-                        print(f"No availability data for product option {product_option_code}")
 
-                print("All availabilities collected for this product")
                 # Assign the availabilities dictionary to the product data
                 product_data[i]['product_availability_and_pricing'] = product_availabilities
-                print('AVAILABILITIES:', product_availabilities)
 
             # Remove products with empty availability
             product_data = [element for element in product_data if element['product_availability_and_pricing']]

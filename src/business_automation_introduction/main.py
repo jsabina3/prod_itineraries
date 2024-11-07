@@ -18,8 +18,8 @@ def run():
         'breakfast_included': 'Yes',
         'flight_return_departure_time': '19:00',
         'ages': '24,24',
-        'start_date': '2024-11-05',
-        'end_date': '2024-11-07',
+        'start_date': '2024-11-08',
+        'end_date': '2024-11-10',
         'flight_data': 'Outward UX1091 departing at 7:05 from Madrid-Barajas and arriving at 9:40 at Ámsterdam Schiphol | Return UX1094 departing at 19:00 from Ámsterdam Schiphol and arriving at 21:40 at Madrid-Barajas'
     }
     BusinessAutomationIntroductionCrew().crew().kickoff(inputs=inputs)
