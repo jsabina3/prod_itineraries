@@ -107,7 +107,7 @@ itinerary_translation_and_writing:
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
-    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
+    A playful, informal, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
@@ -115,7 +115,7 @@ itinerary_translation_and_writing:
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
     - Specific weather forecast day by day. 
-    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDE FACTS, DATA POINTS AND COMPLETE LINKS.
+    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDE FACTS, DATA POINTS AND COMPLETE LINKS. MAKE SURE IT IS WARM AND INFORMAL.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
   agent: itinerary_translator_and_writer
