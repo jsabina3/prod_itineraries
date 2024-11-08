@@ -36,7 +36,7 @@ date_specific_events_task:
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to
     {destination} between {start_date} arriving at {flight_outward_arrival_time}
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport.
-    The travellers are staying at {hotel_name}, which is already booked for {names}.
+    The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}.
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked;
     {flight_data}.
   expected_output: >
@@ -51,23 +51,24 @@ itinerary_task:
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
-    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}. 
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
     {flight_data}. 
     
     Only hotel and flights are booked, any other activity is not booked yet.
-    PRIORITIZE THE TOP ACTIVITIES OFFERED BY VIATOR WHERE POSSIBLE, ALWAYS INCLUDING LINK, PRICE, RATING AND THE EXACT TIME AT WHICH THEY ARE AVAILABLE (IT MUST BE ONE OF THE AVAILABLE TIMES).
-    IF THERE IS LITTLE AVAILABILITY FOR ANY VIATOR ACTIVITY, LET THE TRAVELLER KNOW.
-    COMBINE SMOOTHLY VIATOR ACTIVITIES, DATE-SPECIFIC EVENTS/ACTIVITIES AND OTHER ACTIVITIES WHILE LEAVING TIME TO RELAX AND TO EXPLORE FREELY.
-    AVOID DUPLICATING ACTIVITIES OR SIMILAR ONES (one or more similar words).
+    
+    IF NO VIATOR AFFILIATE LINKS HAVE BEEN GATHERED (containing "mcid=42383&pid=P0020289"), DO NOT INCLUDE VIATOR ACTIVITIES, THEY ARE NOT AVAILABLE.
+    IF AVAILABLE, PRIORITIZE THE TOP ACTIVITIES OFFERED BY VIATOR WITH AFFILIATE LINK WHERE POSSIBLE, ALWAYS INCLUDING LINK, PRICE, RATING AND THE EXACT TIME AT WHICH THEY ARE AVAILABLE (IT MUST BE ONE OF THE AVAILABLE TIMES).
+    DO NOT OVERCHARGE THE ITINERARY, LEAVE SOME TIME TO RELAX AND TO EXPLORE FREELY.
+    NEVER REPEAT ACTIVITIES.
     DO NOT INVENT ANY INFORMATION.
     YOU MUST MAKE LUNCH AND DINNER TIMES ADEQUATE FOR THE TRAVELLERS' USUAL LUNCH AND DINNER TIMES ACCORDING TO THE CULTURE OF THEIR DEPARTURE CITY ({origin}).
-    IMPORTANT: EVERY ELEMENT OF THE ITINERARY MUST BE JUSTIFIED WITH THE WEATHER FORECAST AND TRAVELLERS' AGES.
+    EVERY ELEMENT OF THE ITINERARY MUST BE JUSTIFIED WITH THE WEATHER FORECAST AND TRAVELLERS' AGES.
     ASSUME THAT HOTEL CHECK-IN TIME IS 15:00 FOR THE ITINERARY. HOWEVER, LUGGAGE MAY BE LEFT IN THE HOTEL BEFORE CHECK-IN TIME.
     INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS.
-    TAKE INTO ACCOUNT DISTANCES BETWEEN PLACES AND ACTIVITIES.
+    Viator activities must have affiliate links. These contain "mcid=42383&pid=P0020289". If any Viator link in the itinerary does not contain that, REMOVE IT AND SWITCH IT FOR AN ALTERNATE ACTIVITY.
   expected_output: >
-    Personalized and comprehensive travel itinerary using the information collected by the research agent, prioritizing Viator activities, and ensuring no duplicate or similar activities are included.
+    Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
@@ -100,13 +101,13 @@ itinerary_translation_and_writing:
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
-    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    The travellers are staying at {hotel_name}, which is at {hotel_address} already booked for {names}. 
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
     {flight_data}. 
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
-    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
+    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language (NEVER IN A LOCAL LANGUAGE SUCH AS CATALAN). IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
@@ -135,7 +136,7 @@ PR_adaptation:
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language (NEVER IN A LOCAL LANGUAGE SUCH AS CATALAN):
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -156,10 +157,11 @@ Itinerary_Curation:
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
-    The travellers are staying at {hotel_name}, which is already booked for {names}. 
+    The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}. 
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
     {flight_data}. 
     Only hotel and flights are booked, any other activity is not booked yet.
+
   expected_output: >
     The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. Include plenty of emojis. Make sure the links are clickable. Travellers must get to the airport 2 hours before their flight.
   context:
