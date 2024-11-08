@@ -96,7 +96,7 @@ directions_task:
 
 itinerary_translation_and_writing:
   description: >
-    Develop a message in WhatsApp format in {origin}'s language keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
+    Develop a message in WhatsApp format in {origin}'s COUNTRY'S NATIONAL language (SPANISH FROM SPAIN) keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
     
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
@@ -107,11 +107,10 @@ itinerary_translation_and_writing:
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
-    A playful, informal, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
+    A playful, INFORMAL, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language (SPANISH FROM SPAIN). IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
-    IT MUST BE INFORMAL, CLOSE AND PLAYFUL.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s COUNTRY NATIONAL LANGUAGE (NEVERA LOCAL OR SUB-LANGUAGE SUCH AS CATALAN):
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s COUNTRY NATIONAL LANGUAGE (SPANISH FROM SPAIN):
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -124,6 +123,7 @@ itinerary_translation_and_writing:
 PR_adaptation:
   description: >
     Improve the message to make it extremely beautiful and engaging while keeping all the details.
+    BE CLOSE AND INFORMAL, BUT EXTREMELY INFORMATIVE.
     Make sure it contains A LOT of emojis and textual techniques to make it extremely engaging and appealing.
     Ensure the traveller understands that it is a recommended itinerary and none of the mentioned restaurants or activities are booked, they are just recommendations.
     IMPORTANT: THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
@@ -138,7 +138,7 @@ PR_adaptation:
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language (spanish from Spain):
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -165,7 +165,7 @@ Itinerary_Curation:
     Only hotel and flights are booked, any other activity is not booked yet.
 
   expected_output: >
-    The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. It must be in the traveller country's national language (if the travellers is from Spain, it must be in Spanish from Spain). YOU MUST DO IT IN A NATIONAL LANGUAGE, NEVER IN A LOCAL LANGUAGE SUCH AS CATALAN. Include plenty of emojis. Make sure the links are clickable. Travellers must get to the airport 2 hours before their flight.
+    The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. It must be in the traveller country's national language. Include plenty of emojis. Make sure the links are clickable. Travellers must get to the airport 2 hours before their flight.
   context:
     - gather_viator_data_task
     - fetch_weather_data_task
