@@ -127,7 +127,8 @@ PR_adaptation:
     Ensure the traveller understands that it is a recommended itinerary and none of the mentioned restaurants or activities are booked, they are just recommendations.
     IMPORTANT: THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
     IMPORTANT: USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
-    DIVIDE THE DAYS STARTING EACH DAY WITH **DAY 1**, **DAY 2**, **DAY 3**. USE BOLD THERE AND IN THE HOURS.
+    DIVIDE THE DAYS OF THE ITINERARY STARTING EACH DAY WITH **DAY 1**, **DAY 2**, **DAY 3**. ONLY DO THIS IN THE ACTUAL ITINERARY. USE BOLD THERE AND IN THE HOURS.
+    DIVIDE THE DAYS OF THE WEATHER FORECAST BY ACTUAL DAY AND MONTH. FOR INSTANCE: "- 9 DE NOVIEMBRE DE 2024: PARCIALMENTE SOLEADO...".
     DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. ABSOLUTELY NOWHERE ELSE.
     IMPORTANT: USE BULLET POINTS.
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
@@ -140,7 +141,7 @@ PR_adaptation:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
-    - Specific weather forecast day by day. YOU MUST KEEP THE WEATHER FROM THE PREVIOUS ITINERARY.
+    - Specific weather forecast day by day. YOU MUST KEEP THE WEATHER FROM THE PREVIOUS ITINERARY. DIVIDE THE DAYS OF THE FORECAST BY ACTUAL DAY AND MONTH ("- 9 DE NOVIEMBRE DE 2024:...").
     - The itinerary. YOU MUST KEEP EVERY SINGLE DETAIL AND IT MUST BE BEAUTIFULLY PRESENTED WITH ALL LINKS CLICKABLE AND THE ADEQUATE SPACING BETWEEN PARAGRAPHS.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
