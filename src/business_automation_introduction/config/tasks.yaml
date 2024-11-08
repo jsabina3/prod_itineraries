@@ -107,7 +107,7 @@ itinerary_translation_and_writing:
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
-    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language (NEVER IN A LOCAL LANGUAGE SUCH AS CATALAN). IT MUST BE IN {origin}'s country's national language.
+    A well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
@@ -137,7 +137,7 @@ PR_adaptation:
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language (NEVER IN A LOCAL LANGUAGE SUCH AS CATALAN):
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -164,7 +164,7 @@ Itinerary_Curation:
     Only hotel and flights are booked, any other activity is not booked yet.
 
   expected_output: >
-    The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. Include plenty of emojis. Make sure the links are clickable. Travellers must get to the airport 2 hours before their flight.
+    The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. It must be in the traveller country's national language (if the travellers is from Spain, it must be in Spanish from Spain). Include plenty of emojis. Make sure the links are clickable. Travellers must get to the airport 2 hours before their flight.
   context:
     - gather_viator_data_task
     - fetch_weather_data_task
