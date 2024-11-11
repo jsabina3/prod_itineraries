@@ -154,13 +154,15 @@ Itinerary_Curation:
   description: >
     Revise the itinerary to make sure it is attractive, consistent with the researched information, makes chronological sense, contains a wide selection of activities and is not repetitive or boring.
 
+    KEEP THE SAME LEVEL OF DETAIL.
+    
     IMPORTANT, THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
     IMPORTANT, USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
     DIVIDE THE DAYS OF THE ITINERARY STARTING EACH DAY WITH **Day 1**, **Day 2**, **Day 3**... ONLY DO THIS IN THE ACTUAL ITINERARY. USE BOLD THERE AND IN THE HOURS.
     DIVIDE THE DAYS OF THE WEATHER FORECAST BY ACTUAL DAY AND MONTH. FOR INSTANCE, "- 9 de noviembre de 2024: Parcialmente soleado...".
     DO NOT USE BOLD ANYWHERE ELSE, ONLY IN THE TITLES OF SECTIONS, DAYS AND HOURS. ABSOLUTELY NOWHERE ELSE.
     IMPORTANT, USE BULLET POINTS.
-    IMPORTANT, DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
+    IMPORTANT, DO NOT USE MARKDOWN, NEVER INCLUDE THE "#" CHARACTER AND MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
     BE INFORMAL AND JOYFUL (DO NOT USE THIRD PERSON VERBS WHEN REFERRING TO THE TRAVELLERS AND DO NOT USE WORDS LIKE "USTED").
         
@@ -175,7 +177,7 @@ Itinerary_Curation:
     Only hotel and flights are booked, any other activity is not booked yet.
 
   expected_output: >
-    The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
+    Th same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
     Make sure the links are clickable.
