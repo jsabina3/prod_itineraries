@@ -77,11 +77,11 @@ itinerary_task:
     - The complete itinerary.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
-  context: >
-  - gather_viator_data_task
-  - fetch_weather_data_task
-  - web_search_additional_research_task
-  - date_specific_events_task
+  context:
+    - gather_viator_data_task
+    - fetch_weather_data_task
+    - web_search_additional_research_task
+    - date_specific_events_task
   agent: itinerary_developer
 
 directions_task:
@@ -178,8 +178,8 @@ Itinerary_Curation:
     The EXACT SAME Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    Make sure the links are clickable. 
-  context: >
+    Make sure the links are clickable.
+  context:
     - gather_viator_data_task
     - fetch_weather_data_task
     - web_search_additional_research_task
