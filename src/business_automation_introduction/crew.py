@@ -6,7 +6,6 @@ from business_automation_introduction.tools.viator_activity_tool import ViatorTo
 from business_automation_introduction.tools.distance_matrix_tool import LocationStatusDistanceTool
 from business_automation_introduction.tools.perplexity_tool import RealTimeSearchTool
 from langchain_openai import ChatOpenAI
-from langchain_groq import ChatGroq
 from langchain_anthropic import ChatAnthropic
 
 @CrewBase
