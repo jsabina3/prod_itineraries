@@ -77,7 +77,7 @@ itinerary_task:
     - The complete itinerary.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
-  context:
+  context: >
   - gather_viator_data_task
   - fetch_weather_data_task
   - web_search_additional_research_task
@@ -179,7 +179,7 @@ Itinerary_Curation:
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
     Make sure the links are clickable. 
-  context:
+  context: >
     - gather_viator_data_task
     - fetch_weather_data_task
     - web_search_additional_research_task
