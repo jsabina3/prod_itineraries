@@ -83,7 +83,7 @@ class BusinessAutomationIntroductionCrew():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatGroq(model='llama-3.2-90b-text-preview', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.05)
         )
 
     @task
