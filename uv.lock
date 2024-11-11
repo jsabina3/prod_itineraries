@@ -304,6 +304,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "crewai", extra = ["tools"] },
+    { name = "crewai-tools" },
     { name = "langchain-anthropic" },
     { name = "langchain-openai" },
 ]
@@ -311,6 +312,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "crewai", extras = ["tools"], specifier = ">=0.76.2,<1.0.0" },
+    { name = "crewai-tools", specifier = ">=0.13.2" },
     { name = "langchain-anthropic", specifier = ">=0.2.4" },
     { name = "langchain-openai", specifier = ">=0.2.4" },
 ]
