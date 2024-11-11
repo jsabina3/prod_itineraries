@@ -307,6 +307,7 @@ dependencies = [
     { name = "crewai-tools" },
     { name = "langchain-anthropic" },
     { name = "langchain-openai" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -315,6 +316,7 @@ requires-dist = [
     { name = "crewai-tools", specifier = ">=0.13.2" },
     { name = "langchain-anthropic", specifier = ">=0.2.4" },
     { name = "langchain-openai", specifier = ">=0.2.4" },
+    { name = "requests", specifier = ">=2.32.3" },
 ]
 
 [[package]]
