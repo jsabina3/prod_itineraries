@@ -1,22 +1,21 @@
 [project]
-name = "business_automation_introduction"
+name = "itineraries_final"
 version = "0.1.0"
-description = "business_automation_introduction using crewAI"
+description = "itineraries_final using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.76.2,<1.0.0",
-    "langchain-anthropic>=0.2.4",
-    "langchain-groq>=0.2.1",
-    "langchain-openai>=0.2.4",
+    "crewai[tools]>=0.80.0,<1.0.0",
+    "langchain-anthropic>=0.3.0",
+    "langchain-openai>=0.2.8",
 ]
 
 [project.scripts]
-business_automation_introduction = "business_automation_introduction.main:run"
-run_crew = "business_automation_introduction.main:run"
-train = "business_automation_introduction.main:train"
-replay = "business_automation_introduction.main:replay"
-test = "business_automation_introduction.main:test"
+itineraries_final = "itineraries_final.main:run"
+run_crew = "itineraries_final.main:run"
+train = "itineraries_final.main:train"
+replay = "itineraries_final.main:replay"
+test = "itineraries_final.main:test"
 
 [build-system]
 requires = ["hatchling"]
