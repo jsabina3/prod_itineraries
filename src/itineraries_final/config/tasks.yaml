@@ -196,8 +196,8 @@ Itinerary_Curation:
     It must seem written by a human expert.
     IT MUST BE IN SECOND PERSON IN TERMS OF VERBS AND SENTENCES. THIS IS A NON-NEGOTIABLE. BE CLOSE, JOYFUL AND INFORMAL.
     The links must be clickable.
-    The days of the itinerary must be divided starting each day with **DAY 1**, **DAY 2**, **DAY 3**. This must only be in the actual itinerary. USE BOLD THERE AND IN THE HOURS.
-    The days of the weather forecast must be divided by actual day and month. For instance, "- 9 de noviembre de 2024: Parcialmente soleado...".
+    The days of the itinerary must be divided starting each day with **Día 1:...**, **Día 2:...**, **Día 3:...**... For instance: "**Día 1: 9 de noviembre de 2024**. This must only be in the actual itinerary, USE BOLD THERE AND IN THE HOURS.
+    The days of the weather forecast must be divided by actual day and month. For instance, "- 9 de noviembre de 2024: Parcialmente soleado...". NEVER EVER use "**Día 1...* (for instance) in the weather forecast, just the actual day and month.
   context:
     - gather_viator_data_task
     - fetch_weather_data_task
