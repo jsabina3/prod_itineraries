@@ -17,16 +17,15 @@ fetch_weather_data_task:
   agent: research_agent
 
 web_search_additional_research_task:
-  description: Use WebsiteSearchTool to find additional information in {destination} that match traveler interests taking into account {num_travelers} aged {ages} years old are travelling from {start_date} to {end_date}. They will be staying at hotel {hotel_name}.
+  description: Find additional information in {destination} that match traveler interests taking into account {num_travelers} aged {ages} years old are travelling from {start_date} to {end_date}. They will be staying at hotel {hotel_name}.
   expected_output: A truthful and complete list covering the following categories;
     1) Generic information about the destination.
     2) Best areas to explore by feet.
     3) Hidden gems off-the-beaten-track.
     4) Generic tips and cultural norms.
-    5) 5 breakfast, 5 inexpensive and 5 mid-range but top-rated restaurants with review scores and estimated price per person.
-    6) Nightlife activities according to the travellers ages ({ages}) with reviews.
+    5) 5 breakfast, 5 inexpensive and 5 mid-range but top-rated restaurants.
+    6) Nightlife activities according to the travellers ages ({ages}).
     7) 5 Fun facts about the destination.
-    8) Key data about the {hotel_name} (stars, ratings and location). ASSUME THAT CHECK-IN IS AT 15:00 AND CHECK-OUT AT 10:00.
   async_execution: false
   agent: research_agent
 
