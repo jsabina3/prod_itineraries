@@ -38,7 +38,7 @@ class RealTimeSearchTool(BaseTool):
             """
 
             data = {
-                "model": "sonar-pro",
+                "model": "sonar-reasoning-pro",
                 "messages": [
                     {
                         "role": "system",
