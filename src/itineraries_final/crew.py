@@ -78,10 +78,11 @@ class ItinerariesFinal():
     def web_search_additional_research_task(self) -> Task:
         return Task(
             config=self.tasks_config['web_search_additional_research_task'],
+            tools=[RealTimeSearchTool()],
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4o', temperature=0.1)
+            llm=ChatOpenAI(model='o3-mini', temperature=0.1)
         )
 
     @task
