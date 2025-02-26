@@ -58,7 +58,7 @@ class RealTimeSearchTool(BaseTool):
                 ],
                 "return_images": 0,
                 "return_related_questions": 0,
-                "search_recency_filter": "month",
+                "search_recency_filter": "day",
                 "top_k": 0,
                 "stream": 0,
                 "presence_penalty": 0,
