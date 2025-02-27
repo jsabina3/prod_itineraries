@@ -66,7 +66,7 @@ itinerary_task:
     ASSUME THAT HOTEL CHECK-IN TIME IS 15:00 FOR THE ITINERARY. HOWEVER, LUGGAGE MAY BE LEFT IN THE HOTEL BEFORE CHECK-IN TIME.
     INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS.
     Viator activities must have affiliate links. These contain "mcid=42383&pid=P0020289". If any Viator link in the itinerary does not contain that, REMOVE IT AND SWITCH IT FOR AN ALTERNATE ACTIVITY.
-    You MUST include a Civitatis free tour in the itineraryIf no link is for {destination}, DO NOT include it. Here you have the avilable links:
+    If the following links contain a free tour for the destination ({destination}), you MUST include a Civitatis free tour in the itinerary with the corresponding link. Here you have the available links:
     """https://www.civitatis.com/es/milan/free-tour-milan?aid=2264
     https://www.civitatis.com/es/oporto/free-tour-oporto?aid=2264
     https://www.civitatis.com/es/paris/visita-guiada-paris?aid=2264
