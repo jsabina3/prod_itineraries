@@ -46,7 +46,7 @@ class ViatorTopProductsTool(BaseTool):
                 "filtering": {
                     "destination": destination_id,
                     "lowestPrice": 5,
-                    "highestPrice": 99,
+                    "highestPrice": 45,
                     "startDate": start_date,
                     "endDate": end_date,
                     "includeAutomaticTranslations": False,
