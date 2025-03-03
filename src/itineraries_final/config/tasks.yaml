@@ -17,7 +17,14 @@ fetch_weather_data_task:
   agent: research_agent
 
 web_search_additional_research_task:
-  description: Find additional information in {destination} that match traveler interests taking into account {num_travelers} aged {ages} years old are travelling from {start_date} to {end_date}. They will be staying at hotel {hotel_name}.
+  description: >
+    Use RealTimeSearchTool to find additional information in {destination} that match traveler interests. Take into account the following indications;
+    {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to
+    {destination} between {start_date} arriving at {flight_outward_arrival_time}
+    and {end_date} departing at {flight_return_departure_time} from {destination}'s airport.
+    The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}.
+    Is breakfast included in the hotel? {breakfast_included}. The flights are also booked;
+    {flight_data}.
   expected_output: A truthful and complete list covering the following categories;
     1) Generic information about the destination.
     2) Best areas to explore by feet.
