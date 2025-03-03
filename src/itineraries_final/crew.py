@@ -71,7 +71,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4o-mini', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-4o', temperature=0.05)
         )
 
     @task
@@ -123,14 +123,15 @@ class ItinerariesFinal():
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm=ChatOpenAI(model = 'gpt-4o', temperature = 0)
+            llm = ChatAnthropic(model = 'claude-3-7-sonnet-latest',
+                                temperature = 0)
         )
 
     @task
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatAnthropic(model = 'claude-3-5-sonnet-20241022',
+            llm = ChatAnthropic(model = 'claude-3-7-sonnet-latest',
                                 temperature = 0)
         )
 
