@@ -79,7 +79,7 @@ itinerary_task:
     https://www.civitatis.com/es/paris/visita-guiada-paris?aid=2264
     https://www.civitatis.com/es/budapest/free-tour-budapest?aid=2264
     https://www.civitatis.com/es/niza/free-tour-niza?aid=2264
-    https://www.civitatis.com/es/lisboa?aid=2264
+    https://www.civitatis.com/es/lisboa/free-tour-lisboa?aid=2264
     https://www.civitatis.com/es/lyon/free-tour-lyon?aid=2264
     https://www.civitatis.com/es/bruselas/visita-guiada-bruselas?aid=2264
     https://www.civitatis.com/es/praga/free-tour-praga?aid=2264
@@ -87,6 +87,7 @@ itinerary_task:
     https://www.civitatis.com/es/viena/free-tour-viena?aid=2264
     https://www.civitatis.com/es/roma/free-tour-roma?aid=2264
     https://www.civitatis.com/es/bucarest/free-tour-bucarest?aid=2264"""
+    SWITCH THE "es" FOR THE APPROPRIATE ABBREVIATION IF THE TRAVELLER IS NOT FROM SPAIN.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
@@ -116,7 +117,7 @@ directions_task:
 
 itinerary_translation_and_writing:
   description: >
-    Develop a message in WhatsApp format in {origin}'s COUNTRY'S NATIONAL language (SPANISH FROM SPAIN) keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
+    Develop a message in WhatsApp format in {origin}'s COUNTRY'S NATIONAL language keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
     
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
@@ -127,10 +128,10 @@ itinerary_translation_and_writing:
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
-    A playful, INFORMAL, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language (SPANISH FROM SPAIN). IT MUST BE IN {origin}'s country's national language.
+    A playful, INFORMAL, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s COUNTRY NATIONAL LANGUAGE (SPANISH FROM SPAIN):
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s COUNTRY NATIONAL LANGUAGE:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -158,7 +159,7 @@ PR_adaptation:
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language (spanish from Spain):
+    It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
@@ -198,8 +199,11 @@ Itinerary_Curation:
 
   expected_output: >
     Th same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
+    It MUST BE IN THE TRAVELLER'S LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin}. 
+    IT MUST BE WRITTEN IN A NATIONAL LANGUAGE, NOT A SUB-LANGUAGE (FOR INSTANCE, IF THE TRAVELLER IS FROM BARCELONA, IT MUST BE IN SPANISH, NOT CATALAN).
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
+    IT MUST NOT CONTAIN REPEATED ACTIVITIES.
     IT MUST BE IN SECOND PERSON IN TERMS OF VERBS AND SENTENCES. THIS IS A NON-NEGOTIABLE. BE CLOSE, JOYFUL AND INFORMAL.
     The links must be clickable.
     The days of the itinerary must be divided starting each day with **Día 1:...**, **Día 2:...**, **Día 3:...**... For instance: "**Día 1: 9 de noviembre de 2024**. This must only be in the actual itinerary, USE BOLD THERE AND IN THE HOURS.
