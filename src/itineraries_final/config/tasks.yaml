@@ -87,7 +87,6 @@ itinerary_task:
     https://www.civitatis.com/es/viena/free-tour-viena?aid=2264
     https://www.civitatis.com/es/roma/free-tour-roma?aid=2264
     https://www.civitatis.com/es/bucarest/free-tour-bucarest?aid=2264"""
-    SWITCH THE "es" FOR THE APPROPRIATE ABBREVIATION IF THE TRAVELLER IS NOT FROM SPAIN.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
