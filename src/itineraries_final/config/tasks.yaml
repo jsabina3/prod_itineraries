@@ -117,7 +117,7 @@ directions_task:
 
 itinerary_translation_and_writing:
   description: >
-    Develop a message in WhatsApp format in {origin}'s COUNTRY'S NATIONAL language keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
+    Develop a message in WhatsApp format in {origin}'s COUNTRY'S NATIONAL GENERAL language (THIS IS IMPORTANT: NATIONAL OFFICIAL GENERAL LANGUAGE) keeping all the information and the complete, detailed day-by-day itinerary prepared to be sent to the user. Consider the following indications:
     
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
@@ -200,8 +200,8 @@ Itinerary_Curation:
   expected_output: >
     Th same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     It MUST BE IN THE TRAVELLER'S LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin}. 
-    IT MUST BE WRITTEN IN A NATIONAL LANGUAGE (FOR INSTANCE, IF THE TRAVELLER IS FROM BARCELONA, IT MUST BE IN SPANISH/CASTILIAN).
-    THIS IS VERY IMPORTANT, THE LANGUAGE OF THE TEXT MUST BE A NATIONAL LANGUAGE. NEVER A REGION'S LANGUAGE.
+    IT MUST BE WRITTEN IN A GENERAL NATIONAL LANGUAGE (FOR INSTANCE, IF THE TRAVELLER IS FROM BARCELONA, IT MUST BE IN SPANISH/CASTILIAN).
+    THIS IS VERY IMPORTANT, THE LANGUAGE OF THE TEXT MUST BE A NATIONAL GENERAL LANGUAGE. NEVER A REGION'S LANGUAGE.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
     IT MUST NOT CONTAIN REPEATED ACTIVITIES.
