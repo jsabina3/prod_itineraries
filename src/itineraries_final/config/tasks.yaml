@@ -192,7 +192,8 @@ Itinerary_Curation:
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
     The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}. 
-    Is breakfast included in the hotel? {breakfast_included}. The flights are also booked:
+    Is breakfast included in the hotel? {breakfast_included}. YOU MUST REMEMBER THAT: {breakfast_included}. 
+    The flights are already booked:
     {flight_data}. 
     Only hotel and flights are booked, any other activity is not booked yet.
 
