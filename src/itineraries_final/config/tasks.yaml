@@ -1,6 +1,5 @@
 gather_viator_data_task:
-  description: Fetch activities and tours available at {destination} during {start_date}
-    to {end_date} from Viator taking into account the travellers ages ({ages}). Include links with the appropriate country tag according to the travellers' origin: {origin}.
+  description: Fetch activities and tours available at {destination} during {start_date} to {end_date} from Viator taking into account the travellers ages ({ages}). Include links with the appropriate country tag according to the travellers origin: {origin}.
   expected_output: A JSON of activities with all the following fields for each product option.
     - Product Title.
     - Duration.
