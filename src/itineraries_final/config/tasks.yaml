@@ -5,7 +5,7 @@ gather_viator_data_task:
     - Product Title.
     - Duration.
     - Product Option description.
-    - Link with the appropriate tag depending on {origin} language (just add 'es-ES/', 'fr-FR/' or 'it-IT/' after 'viator.com/'). THEY MUST HAVE THE APPROPRIATE LANGUAGE TAG ACCORDING TO THE LANGUAGE OF {origin}.
+    - Link with the appropriate tag depending on the origin language (just add 'es-ES/', 'fr-FR/' or 'it-IT/' after 'viator.com/'). THEY MUST HAVE THE APPROPRIATE ORIGIN LANGUAGE TAG.
     - Availability and Pricing during the travel dates.
   async_execution: false
   agent: research_agent
