@@ -104,7 +104,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-4.1-2025-04-14', temperature = 0.1)
+            llm = ChatOpenAI(model = 'o4-mini')
         )
 
     @task
@@ -138,7 +138,7 @@ class ItinerariesFinal():
     def Itinerary_Curation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'o3-mini', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'o4-mini')
         )
 
     @crew
