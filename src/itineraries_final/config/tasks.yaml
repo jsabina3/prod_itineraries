@@ -87,8 +87,9 @@ itinerary_task:
     https://www.civitatis.com/es/viena/free-tour-viena?aid=2264
     https://www.civitatis.com/es/roma/free-tour-roma?aid=2264
     https://www.civitatis.com/es/bucarest/free-tour-bucarest?aid=2264"""
-    IF THE ITINERARY IS IN FRENCH, CHANGE THE "es" IN THE LINKS FOR "fr".
-    IF THE ITINERARY IS IN ITALIAN, CHANGE THE "es" IN THE LINKS FOR "it".
+    IF THE ITINERARY IS IN FRENCH (BECAUSE THE TRAVELLER IS FRENCH), CHANGE THE "es" IN THE LINKS FOR "fr".
+    IF THE ITINERARY IS IN ITALIAN (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
+    YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
@@ -186,7 +187,6 @@ Itinerary_Curation:
     IMPORTANT, USE BULLET POINTS.
     IMPORTANT, DO NOT USE MARKDOWN, NEVER INCLUDE THE "#" CHARACTER AND MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
-    YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
     USE NATIONAL LANGUAGE, NEVER REGIONAL LANGUAGE.
         
