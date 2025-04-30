@@ -104,7 +104,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'o4-mini', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'o3')
         )
 
     @task
