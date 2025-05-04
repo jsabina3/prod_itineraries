@@ -104,7 +104,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'o3')
+            llm = ChatOpenAI(model = 'o3', reasoning_effort = 'high')
         )
 
     @task
@@ -116,7 +116,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1-2025-04-14', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-4.1', temperature=0.05)
         )
 
     @task
@@ -131,7 +131,7 @@ class ItinerariesFinal():
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'gpt-4.1-2025-04-14', temperature = 0)
+            llm = ChatOpenAI(model = 'gpt-4.1', temperature = 0)
         )
 
     @task
