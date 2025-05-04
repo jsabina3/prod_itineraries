@@ -131,7 +131,7 @@ class ItinerariesFinal():
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'gpt-4.1', temperature = 0)
+            llm = ChatOpenAI(model = 'o4-mini', reasoning_effort = 'high')
         )
 
     @task
