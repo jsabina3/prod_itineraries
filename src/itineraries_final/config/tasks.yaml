@@ -90,6 +90,7 @@ itinerary_task:
     IF THE ITINERARY IS IN FRENCH (BECAUSE THE TRAVELLER IS FRENCH), CHANGE THE "es" IN THE LINKS FOR "fr".
     IF THE ITINERARY IS IN ITALIAN (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
     YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
+    THE LANGUAGE OF THE ITINERARY MUST BE {origin}'s country's national language.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
@@ -100,6 +101,7 @@ itinerary_task:
     - The complete itinerary.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
+    THE LANGUAGE MUST BE {origin}'s country's national language.
   context:
     - gather_viator_data_task
     - fetch_weather_data_task
@@ -113,7 +115,7 @@ directions_task:
     Take into account that any direction at the beginning of the day is from the traveller's hotel.
     ALWAYS include detailed directions from and to the airport.
     Include distances and links but never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
-  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT.
+  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE.
   async_execution: false
   agent: research_agent
 
