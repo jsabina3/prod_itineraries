@@ -230,12 +230,14 @@ itinerary_translation:
     - If {origin} is in Spain, the message must be in Castilian Peninsular Spanish.
     - If {origin} is in France, the message must be in French.
     - If {origin} is in Italy, the message must be in Italian.
+    YOU MUST KEEP THE LINKS UNCHANGED.
   expected_output: >
     The same Whatsapp message with the same level of detail. If the previous Whatsapp message was not in the right language, it must be translated to the right national language.
     For example:
     - If {origin} is in Spain, the message must be in Castilian Peninsular Spanish.
     - If {origin} is in France, the message must be in French.
     - If {origin} is in Italy, the message must be in Italian.
+    THE LINKS MUST BE UNCHANGED.
   context:
     - Itinerary_Curation
   agent: itinerary_translator
