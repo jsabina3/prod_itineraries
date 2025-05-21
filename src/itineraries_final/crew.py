@@ -153,7 +153,7 @@ class ItinerariesFinal():
     def itinerary_translation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'o4-mini', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'o4-mini')
         )
 
     @crew
