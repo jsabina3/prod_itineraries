@@ -204,7 +204,7 @@ Itinerary_Curation:
     Only hotel and flights are booked, any other activity is not booked yet.
 
   expected_output: >
-    Th same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
+    The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     It MUST BE IN THE TRAVELLER'S ORIGIN LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin} BUT USING THE NATIONAL LANGUAGE. 
     IT MUST BE WRITTEN IN THE TRAVELLER'S NATIONAL ORIGIN COUNTRY LANGUAGE, NEVER REGIONAL LANGUAGES.
     IT MUST BE INFORMAL STYLE. FOR INSTANCE, IF IT IN SPANISH OR FRENCH, IT MUST USE "TU", NOT "VOUS" OR "USTED".
@@ -222,3 +222,20 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
+itinerary_translation:
+  description: >
+    Translate the message to {origin}'s country NATIONAL language. NEVER USE REGIONAL LANGUAGES LIKE CATALAN OR BASQUE. IF THE MESSAGE IS ALREADY IN THE NATIONAL LANGUAGE, KEEP IT AS-IS.
+    For example:
+    - If {origin} is in Spain, the message must be in Castilian Peninsular Spanish.
+    - If {origin} is in France, the message must be in French.
+    - If {origin} is in Italy, the message must be in Italian.
+  expected_output: >
+    The same Whatsapp message with the same level of detail. If the previous Whatsapp message was not in the right language, it must be translated to the right national language.
+    For example:
+    - If {origin} is in Spain, the message must be in Castilian Peninsular Spanish.
+    - If {origin} is in France, the message must be in French.
+    - If {origin} is in Italy, the message must be in Italian.
+  context:
+    - Itinerary_Curation
+  agent: itinerary_translator
