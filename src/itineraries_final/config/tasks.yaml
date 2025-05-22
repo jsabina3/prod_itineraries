@@ -205,7 +205,10 @@ Itinerary_Curation:
 
   expected_output: >
     The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
-    It MUST BE IN THE TRAVELLER'S ORIGIN LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin} BUT USING THE NATIONAL LANGUAGE. 
+    It MUST BE IN THE TRAVELLER'S ORIGIN LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin} BUT USING THE NATIONAL LANGUAGE. FOR EXAMPLE:
+      If {origin} is in Spain, it must be in Spanish.
+      If {origin} is in Italy, it must be in Italian.
+      If {origin} is in France, it must be in French.
     IT MUST BE WRITTEN IN THE TRAVELLER'S NATIONAL ORIGIN COUNTRY LANGUAGE, NEVER REGIONAL LANGUAGES.
     IT MUST BE INFORMAL STYLE. FOR INSTANCE, IF IT IN SPANISH OR FRENCH, IT MUST USE "TU", NOT "VOUS" OR "USTED".
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
