@@ -52,14 +52,6 @@ class ItinerariesFinal():
             allow_delegation=False
         )
 
-    @agent
-    def itinerary_translator(self) -> Agent:
-        return Agent(
-            config=self.agents_config['itinerary_translator'],
-            verbose=True,
-            allow_delegation=False
-        )
-
     @task
     def gather_viator_data_task(self) -> Task:
         return Task(
@@ -147,13 +139,6 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
             llm = ChatOpenAI(model = 'o4-mini', reasoning_effort = 'high')
-        )
-
-    @task
-    def itinerary_translation(self) -> Task:
-        return Task(
-            config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'o4-mini')
         )
 
     @crew
