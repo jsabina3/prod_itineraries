@@ -190,7 +190,7 @@ Itinerary_Curation:
     IMPORTANT, DO NOT USE MARKDOWN, NEVER INCLUDE THE "#" CHARACTER AND MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
-    USE NATIONAL LANGUAGE, NEVER REGIONAL LANGUAGE. DO NOT USE CATALAN FOR TRAVELLERS FROM BARCELONA, USE PENINSULAR SPANISH/CASTILIAN FOR THEM.
+    USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY).
         
     Take into account the following information about the trip:
     
@@ -205,11 +205,7 @@ Itinerary_Curation:
 
   expected_output: >
     The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
-    It MUST BE IN THE TRAVELLER'S ORIGIN LANGUAGE. THIS LANGUAGE IS THEIR ORIGIN COUNTRY'S LANGUAGE, CONSIDERING THAT THEY ARE FROM {origin} BUT USING THE NATIONAL LANGUAGE. FOR EXAMPLE:
-      If {origin} is in Spain, it must be in Spanish.
-      If {origin} is in Italy, it must be in Italian.
-      If {origin} is in France, it must be in French.
-    IT MUST BE WRITTEN IN THE TRAVELLER'S NATIONAL ORIGIN COUNTRY LANGUAGE, NEVER REGIONAL LANGUAGES.
+    The language must be Castilian Spanish if the traveller is from Spain, french is the traveller is from France and italian if the traveller is from Italy.
     IT MUST BE INFORMAL STYLE. FOR INSTANCE, IF IT IN SPANISH OR FRENCH, IT MUST USE "TU", NOT "VOUS" OR "USTED".
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
