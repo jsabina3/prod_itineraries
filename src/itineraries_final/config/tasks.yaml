@@ -87,8 +87,13 @@ itinerary_task:
     https://www.civitatis.com/es/viena/free-tour-viena?aid=2264
     https://www.civitatis.com/es/roma/free-tour-roma?aid=2264
     https://www.civitatis.com/es/bucarest/free-tour-bucarest?aid=2264"""
-    IF THE ITINERARY IS IN FRENCH (BECAUSE THE TRAVELLER IS FRENCH), CHANGE THE "es" IN THE LINKS FOR "fr".
-    IF THE ITINERARY IS IN ITALIAN (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
+    THE TRAVELLER IS FROM {origin}.
+    IF THE TRAVELLER IS FROM SPAIN (BECAUSE THE TRAVELLER IS SPANISH), THE ITINERARY MUST BE IN CASTILIAN SPANISH.
+    IF THE TRAVELLER IS FROM FRANCE (BECAUSE THE TRAVELLER IS FRENCH), THE ITINERARY MUST BE IN FRENCH.
+    IF THE TRAVELLER IS FROM ITALY (BECAUSE THE TRAVELLER IS ITALIAN), THE ITINERARY MUST BE IN ITALIAN.
+    IF THE TRAVELLER IS FROM SPAIN (BECAUSE THE TRAVELLER IS SPANISH), KEEP THE "es" IN THE LINKS.
+    IF THE TRAVELLER IS FROM FRANCE (BECAUSE THE TRAVELLER IS FRENCH), CHANGE THE "es" IN THE LINKS FOR "fr".
+    IF THE TRAVELLER IS FROM ITALY (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
     YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
     THE LANGUAGE OF THE ITINERARY MUST BE {origin}'s country's national language.
   expected_output: >
@@ -101,7 +106,6 @@ itinerary_task:
     - The complete itinerary.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
-    THE LANGUAGE MUST BE {origin}'s country's national language.
   context:
     - gather_viator_data_task
     - fetch_weather_data_task
