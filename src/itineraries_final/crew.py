@@ -60,7 +60,8 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1', temperature=0)
+            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
+                                temperature = 0)
         )
 
     @task
@@ -82,7 +83,8 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1', temperature=0.1)
+            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
+                                temperature = 0)
         )
 
     @task
@@ -93,7 +95,8 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1', temperature=0.1)
+            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
+                                temperature = 0)
         )
 
     @task
@@ -123,7 +126,7 @@ class ItinerariesFinal():
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm = ChatAnthropic(model = 'claude-3-7-sonnet-latest',
+            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
                                 temperature = 0)
         )
 
