@@ -69,6 +69,7 @@ itinerary_task:
     NEVER REPEAT ACTIVITIES.
     DO NOT INVENT ANY INFORMATION.
     YOU MUST MAKE LUNCH AND DINNER TIMES ADEQUATE FOR THE TRAVELLERS' USUAL LUNCH AND DINNER TIMES ACCORDING TO THE CULTURE OF THEIR DEPARTURE CITY ({origin}).
+    BREAKFAST IS NEVER INCLUDED IN THE HOTEL AT THE DAY OF ARRIVAL; IF INCLUDED, IT IS INCLUDED IN SUBSEQUENT DAYS. 
     EVERY ELEMENT OF THE ITINERARY MUST BE JUSTIFIED WITH THE WEATHER FORECAST AND TRAVELLERS' AGES.
     ASSUME THAT HOTEL CHECK-IN TIME IS 15:00 FOR THE ITINERARY. HOWEVER, LUGGAGE MAY BE LEFT IN THE HOTEL BEFORE CHECK-IN TIME.
     INCLUDE PRICE ESTIMATES OF ALL THE RESTAURANTS.
@@ -137,7 +138,7 @@ itinerary_translation_and_writing:
     DO NOT INVENT ANY INFORMATION.
   expected_output: >
     A playful, INFORMAL, well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
-    It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners".
+    It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners". 
     Make sure you frame it as a RECOMMENDED itinerary and consider that THE FULL OUTPUT WILL BE RECEIVED BY {names}, so JUST PROVIDE THE TEXT TO BE SENT TO THE TRAVELLERS. NEVER ASSUME ACTIVITES (EXCEPT HOTELS AND FLIGHTS) ARE ALREADY BOOKED, THEY ARE JUST RECOMMENDATIONS. Sign as Olga from Waynabox.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s COUNTRY NATIONAL LANGUAGE:
     - Greeting and presentation of the recommended itinerary.
@@ -163,6 +164,7 @@ PR_adaptation:
     IMPORTANT: USE BULLET POINTS.
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT: YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
+    IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
   expected_output: >
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
@@ -195,6 +197,7 @@ Itinerary_Curation:
     IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
     USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY).
+    IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
         
     Take into account the following information about the trip:
     
