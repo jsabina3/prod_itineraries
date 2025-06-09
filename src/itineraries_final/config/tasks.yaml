@@ -118,9 +118,11 @@ directions_task:
   description: >
     Get directions and distances between ALL the locations in the itinerary. 
     Take into account that any direction at the beginning of the day is from the traveller's hotel.
-    ALWAYS include detailed directions from and to the airport.
+    ALWAYS TRY TO INCLUDE detailed directions from and to the airport (IF YOU FIND THEM).
     Include distances and links but never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
-  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE.
+    Valid Google Maps links are as follows www.google.com/maps/dir/.
+    NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
+  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
   async_execution: false
   agent: research_agent
 
@@ -198,6 +200,8 @@ Itinerary_Curation:
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
     USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY).
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
+    Valid Google Maps links are as follows www.google.com/maps/dir/.
+    NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
         
     Take into account the following information about the trip:
     
