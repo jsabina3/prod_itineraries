@@ -72,7 +72,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
         )
 
     @task
@@ -119,7 +119,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-4.1', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
         )
 
     @task
@@ -155,3 +155,4 @@ class ItinerariesFinal():
             memory = False,
             cache = False
         )
+
