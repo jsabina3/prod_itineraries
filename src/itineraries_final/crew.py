@@ -60,8 +60,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
-                                temperature = 0)
+            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
         )
 
     @task
@@ -83,8 +82,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
-                                temperature = 0)
+            llm = ChatOpenAI(model = 'gpt-5', temperature = 0.05)
         )
 
     @task
@@ -95,8 +93,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
-                                temperature = 0)
+            llm = ChatOpenAI(model = 'gpt-5', temperature = 0.05)
         )
 
     @task
@@ -107,7 +104,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'o3', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
         )
 
     @task
@@ -126,22 +123,21 @@ class ItinerariesFinal():
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm = ChatAnthropic(model = 'claude-sonnet-4-20250514',
-                                temperature = 0)
+            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'medium')
         )
 
     @task
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'o4-mini', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
         )
 
     @task
     def Itinerary_Curation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'o3', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
         )
 
     @crew
@@ -155,4 +151,5 @@ class ItinerariesFinal():
             memory = False,
             cache = False
         )
+
 
