@@ -200,7 +200,7 @@ Itinerary_Curation:
     IMPORTANT, DO NOT USE MARKDOWN, NEVER INCLUDE THE "#" CHARACTER AND MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
-    USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY).
+    USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY). THE TRAVELLER IS FROM {origin}.
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
@@ -236,4 +236,5 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
