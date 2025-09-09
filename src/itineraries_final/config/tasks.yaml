@@ -218,7 +218,7 @@ Itinerary_Curation:
 
   expected_output: >
     The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
-    The language must be Castilian Spanish if the traveller is from Spain, french is the traveller is from France and italian if the traveller is from Italy.
+    The language must be Castilian Spanish if the traveller is from Spain, french is the traveller is from France and italian if the traveller is from Italy. The traveller is from {origin}.
     IT MUST BE INFORMAL STYLE. FOR INSTANCE, IF IT IN SPANISH OR FRENCH, IT MUST USE "TU", NOT "VOUS" OR "USTED".
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
@@ -236,3 +236,4 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
