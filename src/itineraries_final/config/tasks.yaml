@@ -124,6 +124,7 @@ directions_task:
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
     YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
+    YOU MUST INCLUDE DIRECTIONS TO/FROM THE AIRPORT.
     DIRECTIONS TO AND FROM THE AIRPORT MUST BE THROUGH PUBLIC TRANSPORTATION.
   expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
   async_execution: false
@@ -240,6 +241,7 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
 
 
