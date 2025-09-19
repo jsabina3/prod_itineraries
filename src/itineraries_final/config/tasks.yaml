@@ -97,6 +97,7 @@ itinerary_task:
     IF THE TRAVELLER IS FROM ITALY (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
     YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
     THE LANGUAGE OF THE ITINERARY MUST BE {origin}'s country's national language.
+    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
     It must contain the following structure:
@@ -122,6 +123,8 @@ directions_task:
     Include distances and links but never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
+    YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
+    DIRECTIONS TO AND FROM THE AIRPORT MUST BE THROUGH PUBLIC TRANSPORTATION.
   expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
   async_execution: false
   agent: research_agent
@@ -172,6 +175,7 @@ PR_adaptation:
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
+    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
@@ -219,13 +223,13 @@ Itinerary_Curation:
   expected_output: >
     The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     The language must be Castilian Spanish if the traveller is from Spain, french is the traveller is from France and italian if the traveller is from Italy. The traveller is from {origin}.
-    IT MUST BE INFORMAL STYLE. FOR INSTANCE, IF IT IN SPANISH OR FRENCH, IT MUST USE "TU", NOT "VOUS" OR "USTED".
+    IT MUST BE INFORMAL STYLE, CLOSE AND PERSONAL BUT PROFESSIONAL.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
     IT MUST NOT CONTAIN REPEATED ACTIVITIES.
     IT MUST NOT CONTAIN THE DAYS OF THE WEEK THAT EACH DAY CORRESPONDS TO. THIS MEANS IT MUST NOT SPECIFY WHETHER EACH DAY IS A MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY OR SUNDAY.
     IT MUST BE IN SECOND PERSON INFORMAL STYLE IN TERMS OF VERBS AND SENTENCES. THIS IS A NON-NEGOTIABLE. BE CLOSE, JOYFUL AND INFORMAL.
-    IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
+    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
     The links must be clickable.
     The days of the itinerary must be divided starting each day with **Día 1:...**, **Día 2:...**, **Día 3:...**... For instance: "**Día 1: 9 de noviembre de 2024**. This must only be in the actual itinerary, USE BOLD THERE AND IN THE HOURS.
     The days of the weather forecast must be divided by actual day and month. For instance, "- 9 de noviembre de 2024: Parcialmente soleado...". NEVER EVER use "**Día 1...* (for instance) in the weather forecast, just the actual day and month.
@@ -236,5 +240,6 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
 
