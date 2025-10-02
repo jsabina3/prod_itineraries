@@ -1,7 +1,9 @@
 gather_viator_data_task:
-  description: Fetch activities and tours available at {destination} during {start_date}
+  description: >
+    Fetch activities and tours available at {destination} during {start_date}
     to {end_date} from Viator taking into account the travellers ages ({ages}). Include links with the appropriate language tag according to the travellers origin ({origin}).
-  expected_output: A JSON of activities with all the following fields for each product option.
+  expected_output: >
+    A JSON of activities with all the following fields for each product option.
     - Product Title.
     - Duration.
     - Product Option description.
@@ -25,7 +27,8 @@ web_search_additional_research_task:
     The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}.
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked;
     {flight_data}.
-  expected_output: A truthful and complete list covering the following categories;
+  expected_output: >
+    A truthful and complete list covering the following categories;
     1) Generic information about the destination.
     2) Best areas to explore by feet.
     3) Hidden gems off-the-beaten-track.
@@ -127,7 +130,7 @@ directions_task:
     YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
     YOU MUST INCLUDE DIRECTIONS TO/FROM THE AIRPORT.
     DIRECTIONS TO AND FROM THE AIRPORT MUST BE THROUGH PUBLIC TRANSPORTATION.
-  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
+  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE.
   async_execution: false
   agent: research_agent
 
@@ -193,9 +196,7 @@ PR_adaptation:
 Itinerary_Curation:
   description: >
     Revise the itinerary to make sure it is attractive, consistent with the researched information, makes chronological sense, contains a wide selection of activities and is not repetitive or boring.
-
     KEEP THE SAME LEVEL OF DETAIL.
-    
     IMPORTANT, THIS IS A MUST, DO NOT USE "#" AND MAKE THE FORMAT VERY CLEAN AND APPEALING.
     IMPORTANT, USE BOLD FOR THE TITLE OF EACH SECTION TO MAKE IT EASIER TO FOLLOW.
     DIVIDE THE DAYS OF THE ITINERARY STARTING EACH DAY WITH **Day 1**, **Day 2**, **Day 3**... ONLY DO THIS IN THE ACTUAL ITINERARY. USE BOLD THERE AND IN THE HOURS.
@@ -210,9 +211,7 @@ Itinerary_Curation:
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
-        
     Take into account the following information about the trip:
-    
     {num_travelers} people named {names} aged {ages} are Wayners from {origin} travelling to 
     {destination} between {start_date} arriving at {flight_outward_arrival_time} 
     and {end_date} departing at {flight_return_departure_time} from {destination}'s airport. 
@@ -221,7 +220,6 @@ Itinerary_Curation:
     The flights are already booked:
     {flight_data}. 
     Only hotel and flights are booked, any other activity is not booked yet.
-
   expected_output: >
     The same Whatsapp message with the same level of detail but a revised itinerary that contains at least the same level of detail as well but is sure to delight the travellers. 
     The language must be Castilian Spanish if the traveller is from Spain, french is the traveller is from France and italian if the traveller is from Italy. The traveller is from {origin}.
@@ -236,13 +234,14 @@ Itinerary_Curation:
     The links must be clickable.
     The days of the itinerary must be divided starting each day with **Día 1:...**, **Día 2:...**, **Día 3:...**... For instance: "**Día 1: 9 de noviembre de 2024**. This must only be in the actual itinerary, USE BOLD THERE AND IN THE HOURS.
     The days of the weather forecast must be divided by actual day and month. For instance, "- 9 de noviembre de 2024: Parcialmente soleado...". NEVER EVER use "**Día 1...* (for instance) in the weather forecast, just the actual day and month.
-  context:
+  context: >
     - gather_viator_data_task
     - fetch_weather_data_task
     - web_search_additional_research_task
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
 
 
