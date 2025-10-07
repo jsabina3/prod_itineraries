@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 import requests
 
 class RealTimeSearchTool(BaseTool):

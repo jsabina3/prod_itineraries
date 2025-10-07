@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 import requests
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 
 # Load environment variables
 load_dotenv()
