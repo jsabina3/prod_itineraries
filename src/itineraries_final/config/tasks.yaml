@@ -97,7 +97,7 @@ itinerary_task:
     IF THE TRAVELLER IS FROM ITALY (BECAUSE THE TRAVELLER IS ITALIAN), CHANGE THE "es" IN THE LINKS FOR "it".
     YOU MUST MAKE SURE THAT THE EVENTS PROPOSED IN THE ITINERARY ARE SET AT THE RIGHT DATE.
     THE LANGUAGE OF THE ITINERARY MUST BE {origin}'s country's national language.
-    YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE ITS RETURNING FLIGHT DEPARTURE TIME.
+    YOU MUST STRUCTURE THE LAST DAY SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE ITS FLIGHT DEPARTURE TIME.
     YOU MUST PRIORITIZE THE MOST RELEVANT AND KEY SPOTS/ACTIVITIES OF THE DESTINATION.
   expected_output: >
     Personalized and comprehensive travel itinerary using the information collected by the research agent.
@@ -106,7 +106,7 @@ itinerary_task:
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
     - Specific weather forecast day by day. 
-    - The complete itinerary.
+    - The complete itinerary (the last day must be scheduled so the traveller arrives at the airport 2.5 hours before the flight scheduled time).
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
   context:
@@ -152,7 +152,7 @@ itinerary_translation_and_writing:
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
     - Specific weather forecast day by day. 
-    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDE FACTS, DATA POINTS AND COMPLETE LINKS. 
+    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDE FACTS, DATA POINTS AND COMPLETE LINKS. The last day must be scheduled so the traveller arrives at the airport 2.5 hours before the flight scheduled time.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
   agent: itinerary_translator_and_writer
@@ -171,13 +171,13 @@ PR_adaptation:
     DO NOT INCLUDE THE SPECIFIC DAYS OF THE WEEK THAT EACH DAY CORRESPONDS TO. THIS MEANS IT MUST NOT SPECIFY WHETHER EACH DAY IS A MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY OR SUNDAY.
     IMPORTANT: USE BULLET POINTS.
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
-    IMPORTANT: YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
+    IMPORTANT: YOU MUST SCHEDULE THE TRAVELLER TO ARRIVE AT THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME ON THE LAST DAY.
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
   expected_output: >
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
     It must seem written by a human expert.
-    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
+    THE LAST DAY MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE DEPARTING.
     It must have the FULL COMPLETE following structure and the full text must be in {origin}'s country national official language:
     - Greeting and presentation of the recommended itinerary.
     - Hotel Information (stars, location, reviews...).
@@ -204,13 +204,13 @@ Itinerary_Curation:
     DO NOT INCLUDE THE SPECIFIC DAY OF THE WEEK THAT EACH DAY CORRESPONDS TO. THIS MEANS IT MUST NOT SPECIFY WHETHER EACH DAY IS A MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY OR SUNDAY.
     IMPORTANT, USE BULLET POINTS.
     IMPORTANT, DO NOT USE MARKDOWN, NEVER INCLUDE THE "#" CHARACTER AND MAKE IT VERY EASY TO FOLLOW.
-    IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO HEAD TO THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME.
+    IMPORTANT, YOU MUST SCHEDULE THE TRAVELLER TO ARRIVE AT THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME ON THE LAST DAY.
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
     USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY). THE TRAVELLER IS FROM {origin}.
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
-    Y0U MUST MAKE THE ITINERARY SO THAT THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT.
+    Y0U MUST MAKE THE ITINERARY SO THAT THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT ON THE LAST DAY.
         
     Take into account the following information about the trip:
     
@@ -232,7 +232,7 @@ Itinerary_Curation:
     IT MUST NOT CONTAIN REPEATED ACTIVITIES.
     IT MUST NOT CONTAIN THE DAYS OF THE WEEK THAT EACH DAY CORRESPONDS TO. THIS MEANS IT MUST NOT SPECIFY WHETHER EACH DAY IS A MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY OR SUNDAY.
     IT MUST BE IN SECOND PERSON INFORMAL STYLE IN TERMS OF VERBS AND SENTENCES. THIS IS A NON-NEGOTIABLE. BE CLOSE, JOYFUL AND INFORMAL.
-    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT. THIS IS CRITICAL.
+    IT MUST BE STRUCTURED SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT ON THE LAST DAY OF THE TRIP. THIS IS CRITICAL.
     The links must be clickable.
     The days of the itinerary must be divided starting each day with **Día 1:...**, **Día 2:...**, **Día 3:...**... For instance: "**Día 1: 9 de noviembre de 2024**. This must only be in the actual itinerary, USE BOLD THERE AND IN THE HOURS.
     The days of the weather forecast must be divided by actual day and month. For instance, "- 9 de noviembre de 2024: Parcialmente soleado...". NEVER EVER use "**Día 1...* (for instance) in the weather forecast, just the actual day and month.
@@ -243,4 +243,5 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
