@@ -127,6 +127,7 @@ directions_task:
     YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT DEPARTURE TIME.
     YOU MUST INCLUDE DIRECTIONS TO/FROM THE AIRPORT.
     DIRECTIONS TO AND FROM THE AIRPORT MUST BE THROUGH PUBLIC TRANSPORTATION.
+    ALWAYS INCLUDE ESTIMATED FARE FOR PUBLIC TRANSPORTATION ROUTES, IF AVAILABLE.
   expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
   async_execution: false
   agent: research_agent
@@ -244,6 +245,7 @@ Itinerary_Curation:
     - date_specific_events_task
     - PR_adaptation
   agent: Itinerary_Director
+
 
 
 
