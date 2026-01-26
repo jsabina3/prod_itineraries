@@ -58,7 +58,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
@@ -69,7 +69,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
@@ -80,7 +80,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5', temperature = 0.05)
+            llm = ChatOpenAI(model = 'gpt-5.2', temperature = 0.05)
         )
 
     @task
@@ -91,7 +91,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5', temperature = 0.05)
+            llm = ChatOpenAI(model = 'gpt-5.2', temperature = 0.05)
         )
 
     @task
@@ -102,7 +102,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
         )
 
     @task
@@ -114,28 +114,28 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm=ChatOpenAI(model='gpt-5', temperature=0.05)
+            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'medium')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
         )
 
     @task
     def Itinerary_Curation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'gpt-5', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
         )
 
     @crew
@@ -149,6 +149,7 @@ class ItinerariesFinal():
             memory = False,
             cache = False
         )
+
 
 
 
