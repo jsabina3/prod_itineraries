@@ -102,7 +102,7 @@ class ItinerariesFinal():
             verbose=True,
             allow_delegation=False,
             async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
@@ -128,14 +128,14 @@ class ItinerariesFinal():
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
     def Itinerary_Curation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'high')
+            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @crew
@@ -149,6 +149,7 @@ class ItinerariesFinal():
             memory = False,
             cache = False
         )
+
 
 
 
