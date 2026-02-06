@@ -23,15 +23,14 @@ class RealTimeSearchTool(BaseTool):
                     {"role": "system", "content": "You are a senior travel research expert providing detailed, personalized guides."},
                     {"role": "user", "content": query}
                 ],
-                "max_tokens": 1000,
+                "max_tokens": 4096,
                 "temperature": 0.2,
                 "top_p": 0.9,
-                "return_citations": 0,
-                "search_domain_filter": ["perplexity.ai"],
-                "return_images": 0,
-                "return_related_questions": 0,
+                "return_citations": False,
+                "return_images": False,
+                "return_related_questions": False,
                 "search_recency_filter": "month",
-                "stream": 0,
+                "stream": False,
                 "presence_penalty": 0,
                 "frequency_penalty": 1
             }

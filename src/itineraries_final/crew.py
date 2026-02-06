@@ -1,10 +1,9 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from itineraries_final.tools.accuweather_tool import AccuWeatherTool
 from itineraries_final.tools.viator_activity_tool import ViatorTopProductsTool
 from itineraries_final.tools.distance_matrix_tool import LocationStatusDistanceTool
 from itineraries_final.tools.perplexity_tool import RealTimeSearchTool
-from langchain_openai import ChatOpenAI
 
 @CrewBase
 class ItinerariesFinal():
@@ -15,7 +14,8 @@ class ItinerariesFinal():
         return Agent(
             config=self.agents_config['research_agent'],
             verbose=True,
-            allow_delegation=False
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', temperature=0.05)
         )
 
     @agent
@@ -23,7 +23,8 @@ class ItinerariesFinal():
         return Agent(
             config=self.agents_config['itinerary_developer'],
             verbose=True,
-            allow_delegation=False
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
     @agent
@@ -31,7 +32,8 @@ class ItinerariesFinal():
         return Agent(
             config=self.agents_config['itinerary_translator_and_writer'],
             verbose=True,
-            allow_delegation=False
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
     @agent
@@ -39,7 +41,8 @@ class ItinerariesFinal():
         return Agent(
             config=self.agents_config['PR_director'],
             verbose=True,
-            allow_delegation=False
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
     @agent
@@ -47,7 +50,8 @@ class ItinerariesFinal():
         return Agent(
             config=self.agents_config['Itinerary_Director'],
             verbose=True,
-            allow_delegation=False
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
     @task
@@ -55,10 +59,6 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['gather_viator_data_task'],
             tools=[ViatorTopProductsTool()],
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
@@ -66,10 +66,6 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['fetch_weather_data_task'],
             tools=[AccuWeatherTool()],
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
@@ -77,10 +73,6 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['web_search_additional_research_task'],
             tools=[RealTimeSearchTool()],
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5.2', temperature = 0.05)
         )
 
     @task
@@ -88,21 +80,12 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['date_specific_events_task'],
             tools=[RealTimeSearchTool()],
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5.2', temperature = 0.05)
         )
 
     @task
     def itinerary_task(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_task'],
-            agent=self.itinerary_developer(),
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
@@ -110,32 +93,24 @@ class ItinerariesFinal():
         return Task(
             config=self.tasks_config['directions_task'],
             tools=[LocationStatusDistanceTool()],
-            agent = self.research_agent(),
-            verbose=True,
-            allow_delegation=False,
-            async_execution=False,
-            llm=ChatOpenAI(model='gpt-5.2', temperature=0.05)
         )
 
     @task
     def itinerary_translation_and_writing(self) -> Task:
         return Task(
             config=self.tasks_config['itinerary_translation_and_writing'],
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
     def PR_adaptation(self) -> Task:
         return Task(
             config=self.tasks_config['PR_adaptation'],
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @task
     def Itinerary_Curation(self) -> Task:
         return Task(
             config=self.tasks_config['Itinerary_Curation'],
-            llm = ChatOpenAI(model = 'gpt-5.2', reasoning_effort = 'medium')
         )
 
     @crew
@@ -146,11 +121,6 @@ class ItinerariesFinal():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            memory = False,
-            cache = False
+            memory=False,
+            cache=False
         )
-
-
-
-
-
