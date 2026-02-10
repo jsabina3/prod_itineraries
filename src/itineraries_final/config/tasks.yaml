@@ -121,7 +121,7 @@ directions_task:
     Get directions and distances between ALL the locations in the itinerary. 
     Take into account that any direction at the beginning of the day is from the traveller's hotel.
     ALWAYS TRY TO INCLUDE detailed directions from and to the airport (IF YOU FIND THEM).
-    Include distances and links but never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
+    Include distances, estimated duration, and estimated cost/fare of each route segment. Never use [], just include the link as-is, making sure it is clickable in a Whatsapp message.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
     YOU MUST STRUCTURE IT SO THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT DEPARTURE TIME.
@@ -129,7 +129,7 @@ directions_task:
     YOU MUST INCLUDE DIRECTIONS FROM THE ACCOMMODATION TO THE AIRPORT TOO.
     DIRECTIONS TO AND FROM THE AIRPORT MUST BE THROUGH PUBLIC TRANSPORTATION.
     ALWAYS INCLUDE ESTIMATED FARE FOR PUBLIC TRANSPORTATION ROUTES, IF AVAILABLE.
-  expected_output: The FULL, COMPLETE, previous itinerary with distances and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
+  expected_output: The FULL, COMPLETE, previous itinerary with distances, estimated duration, estimated cost/fare and specific google maps links between every activity/place. ALL THE DETAILS FROM THE PREVIOUS ITINERARY MUST BE KEPT. EVERYTHING MUST BE IN THE SAME LANGUAGE. 
   async_execution: false
   context:
     - itinerary_task
@@ -148,7 +148,7 @@ itinerary_translation_and_writing:
     Only hotel and flights are booked, any other activity is not booked yet.
     DO NOT INVENT ANY INFORMATION.
     DO NOT USE FORMAL LANGUAGE. NEVER USE WORDS LIKE "USTED". BE CLOSE AND PERSONAL.
-    KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DIRECTIONS AND FARES FROM THE PREVIOUS ITINERARY.
+    KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DURATIONS, ESTIMATED COSTS/FARES, DIRECTIONS AND TRANSIT DETAILS FROM THE PREVIOUS ITINERARY.
   expected_output: >
     A playful, INFORMAL (never use words like -Usted-), well-structured and extremely informative Whatsapp text-message in text format (NOT MARKDOWN) READY TO BE SENT DIRECTLY TO {names} (wayners) in their country's national language. IT MUST BE IN {origin}'s country's national language.
     It must include the FULL COMPLETE DETAILED RECOMMENDED ITINERARY DAY BY DAY WITH ALL THE DAYS ACTIVITIES AND TRANSPORT OPTIONS developed up to now (including prices and all useful data points) addressing the travellers as "Wayners". 
@@ -158,7 +158,7 @@ itinerary_translation_and_writing:
     - Hotel Information (stars, location, reviews...).
     - Flight Information.
     - Specific weather forecast day by day. 
-    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDING TRANSIT DIRECTIONS (LINKS, DISTANCES, FARES...), FACTS, DATA POINTS AND COMPLETE LINKS. The last day must be scheduled so the traveller arrives at the airport 2.5 hours before the flight scheduled time.
+    - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDING TRANSIT DIRECTIONS (LINKS, DISTANCES, DURATIONS, ESTIMATED COSTS/FARES...), FACTS, DATA POINTS AND COMPLETE LINKS. The last day must be scheduled so the traveller arrives at the airport 2.5 hours before the flight scheduled time.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
   context:
@@ -181,7 +181,7 @@ PR_adaptation:
     IMPORTANT: DO NOT USE MARKDOWN, MAKE IT VERY EASY TO FOLLOW.
     IMPORTANT: YOU MUST SCHEDULE THE TRAVELLER TO ARRIVE AT THE AIRPORT 2.5 HOURS BEFORE THEIR RETURN DEPARTURE TIME ON THE LAST DAY.
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
-    IMPORTANT: KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DIRECTIONS AND FARES FROM THE PREVIOUS ITINERARY.
+    IMPORTANT: KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DURATIONS, ESTIMATED COSTS/FARES, DIRECTIONS AND TRANSIT DETAILS FROM THE PREVIOUS ITINERARY.
   expected_output: >
     A Whatsapp message with the same information and level of detail but PR-optimized for engagement and aesthetics.
     It must be really appealing, eye-catching and contain A TON OF EMOJIS.
@@ -219,7 +219,7 @@ Itinerary_Curation:
     BE INFORMAL AND JOYFUL (DO NOT USE WORDS LIKE "USTED" OR "VOUS").
     USE THE TRAVELLER'S ORIGIN COUNTRY LANGUAGE (THE MOST SPOKEN LANGUAGE IN THE TRAVELLER'S COUNTRY). THE TRAVELLER IS FROM {origin}.
     IMPORTANT: Breakfast is never included in the hotel at the day of arrival; if included, it is included in subsequent days.
-    IMPORTANT: KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DIRECTIONS AND FARES FROM THE PREVIOUS ITINERARY.
+    IMPORTANT: KEEP ANY GOOGLE MAPS LINKS, DISTANCES, DURATIONS, ESTIMATED COSTS/FARES, DIRECTIONS AND TRANSIT DETAILS FROM THE PREVIOUS ITINERARY.
     Valid Google Maps links are as follows www.google.com/maps/dir/.
     NEVER PUT GOOGLE MAPS LINKS IN THE FOLLOWING FORMAT goo.gl/maps/.
     Y0U MUST MAKE THE ITINERARY SO THAT THE TRAVELLER ARRIVES AT THE AIRPORT 2.5 HOURS BEFORE THE RETURNING FLIGHT ON THE LAST DAY.
