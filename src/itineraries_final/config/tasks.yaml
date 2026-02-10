@@ -8,13 +8,13 @@ gather_viator_data_task:
     - Link with the appropriate tag depending on the origin language (just add 'es-ES/', 'fr-FR/' or 'it-IT/' after 'viator.com/'). THEY MUST HAVE THE APPROPRIATE ORIGIN LANGUAGE TAG.
     - Availability and Pricing during the travel dates.
   async_execution: true
-  agent: research_agent
+  agent: research_agent_viator
 
 fetch_weather_data_task:
   description: Get a 5-day weather forecast for {destination}.
   expected_output: Daily weather forecasts for {destination} for the following 5 days.
   async_execution: true
-  agent: research_agent
+  agent: research_agent_weather
 
 web_search_additional_research_task:
   description: >
@@ -34,7 +34,7 @@ web_search_additional_research_task:
     6) Nightlife activities according to the travellers ages ({ages}).
     7) 5 Fun facts about the destination.
   async_execution: true
-  agent: research_agent
+  agent: research_agent_web
 
 date_specific_events_task:
   description: > 

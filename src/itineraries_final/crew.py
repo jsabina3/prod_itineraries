@@ -19,6 +19,33 @@ class ItinerariesFinal():
         )
 
     @agent
+    def research_agent_viator(self) -> Agent:
+        return Agent(
+            config=self.agents_config['research_agent_viator'],
+            verbose=True,
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', temperature=0.05)
+        )
+
+    @agent
+    def research_agent_weather(self) -> Agent:
+        return Agent(
+            config=self.agents_config['research_agent_weather'],
+            verbose=True,
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', temperature=0.05)
+        )
+
+    @agent
+    def research_agent_web(self) -> Agent:
+        return Agent(
+            config=self.agents_config['research_agent_web'],
+            verbose=True,
+            allow_delegation=False,
+            llm=LLM(model='gpt-5.2', temperature=0.05)
+        )
+
+    @agent
     def itinerary_developer(self) -> Agent:
         return Agent(
             config=self.agents_config['itinerary_developer'],
