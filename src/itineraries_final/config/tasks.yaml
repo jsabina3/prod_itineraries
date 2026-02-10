@@ -161,6 +161,8 @@ itinerary_translation_and_writing:
     - The complete itinerary. You MUST KEEP EVERY SINGLE DETAIL, INCLUDING TRANSIT DIRECTIONS (LINKS, DISTANCES, FARES...), FACTS, DATA POINTS AND COMPLETE LINKS. The last day must be scheduled so the traveller arrives at the airport 2.5 hours before the flight scheduled time.
     - Fun facts and top tips, such as what to book in advance.
     - Olga Informal Signature.
+  context:
+    - directions_task
   agent: itinerary_translator_and_writer
 
 PR_adaptation:
@@ -195,6 +197,8 @@ PR_adaptation:
     - Olga Informal Signature.
     IMPORTANT: BOLD MUST ONLY BE USED IN THE TITLES OF SECTIONS, TITLES OF DAYS AND THE SPECIFIC HOURS.
     IMPORTANT: IT MUST ALWAYS ALWAYS ALWAYS INCLUDE A DISCLAIMER (NOT IN BOLD) THAT SAYS THAT NONE OF THE MENTIONED RESTAURANTS OR ACTIVITIES ARE BOOKED, THEY ARE JUST RECOMMENDATIONS.
+  context:
+    - itinerary_translation_and_writing
   agent: PR_director
 
 Itinerary_Curation:
