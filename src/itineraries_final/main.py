@@ -6,9 +6,6 @@ from itineraries_final.crew import ItinerariesFinal
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
-#!/usr/bin/env python
-import sys
-from itineraries_final.crew import ItinerariesFinal
 
 def run():
     """

@@ -1,13 +1,13 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
-from itineraries_final.tools.accuweather_tool import AccuWeatherTool
+from itineraries_final.tools.openweather_tool import OpenWeatherTool
 from itineraries_final.tools.viator_activity_tool import ViatorTopProductsTool
 from itineraries_final.tools.distance_matrix_tool import LocationStatusDistanceTool
 from itineraries_final.tools.perplexity_tool import RealTimeSearchTool
 
 @CrewBase
 class ItinerariesFinal():
-    """BusinessAutomationIntroduction crew"""
+    """Waynabox travel itinerary generation crew"""
 
     @agent
     def research_agent(self) -> Agent:
@@ -65,7 +65,7 @@ class ItinerariesFinal():
     def fetch_weather_data_task(self) -> Task:
         return Task(
             config=self.tasks_config['fetch_weather_data_task'],
-            tools=[AccuWeatherTool()],
+            tools=[OpenWeatherTool()],
         )
 
     @task
@@ -115,12 +115,12 @@ class ItinerariesFinal():
 
     @crew
     def crew(self) -> Crew:
-        """Creates the BusinessAutomationIntroduction crew"""
+        """Creates the Waynabox itinerary generation crew"""
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            memory=False,
-            cache=False
+            memory=True,
+            cache=True
         )

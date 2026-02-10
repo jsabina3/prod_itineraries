@@ -7,13 +7,13 @@ gather_viator_data_task:
     - Product Option description.
     - Link with the appropriate tag depending on the origin language (just add 'es-ES/', 'fr-FR/' or 'it-IT/' after 'viator.com/'). THEY MUST HAVE THE APPROPRIATE ORIGIN LANGUAGE TAG.
     - Availability and Pricing during the travel dates.
-  async_execution: false
+  async_execution: true
   agent: research_agent
 
 fetch_weather_data_task:
   description: Get a 5-day weather forecast for {destination}.
   expected_output: Daily weather forecasts for {destination} for the following 5 days.
-  async_execution: false
+  async_execution: true
   agent: research_agent
 
 web_search_additional_research_task:
@@ -33,7 +33,7 @@ web_search_additional_research_task:
     5) 5 breakfast, 5 inexpensive and 5 mid-range but top-rated restaurants.
     6) Nightlife activities according to the travellers ages ({ages}).
     7) 5 Fun facts about the destination.
-  async_execution: false
+  async_execution: true
   agent: research_agent
 
 date_specific_events_task:

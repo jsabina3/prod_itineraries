@@ -2,15 +2,49 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 from crewai.tools import BaseTool
+from pydantic import BaseModel, Field
 import requests
 import json
+import logging
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+logger = logging.getLogger(__name__)
+
+VIATOR_AFFILIATE_PARAMS = "mcid=42383&pid=P0020289"
+
+
+class ViatorTopProductsToolInput(BaseModel):
+    """Input schema for ViatorTopProductsTool."""
+    destination: str = Field(
+        ...,
+        description="The travel destination to search activities for, e.g. 'Paris' or 'Rome'."
+    )
+    start_date: str = Field(
+        ...,
+        description="Start date in YYYY-MM-DD format, e.g. '2025-03-15'."
+    )
+    end_date: str = Field(
+        ...,
+        description="End date in YYYY-MM-DD format, e.g. '2025-03-18'."
+    )
+
+
 class ViatorTopProductsTool(BaseTool):
     name: str = "Viator Lookup"
-    description: str = "Searches for tours and activities with their respective availabilities in a given destination using the Viator API."
+    description: str = (
+        "Searches for tours and activities with their respective availabilities "
+        "in a given destination using the Viator API. Requires destination, start_date, and end_date."
+    )
+    args_schema: type[BaseModel] = ViatorTopProductsToolInput
     api_key: str = os.getenv('EXP_API_KEY')
+
+    def _append_affiliate_params(self, url: str) -> str:
+        """Append affiliate tracking parameters to a Viator product URL."""
+        if not url:
+            return url
+        separator = "&" if "?" in url else "?"
+        return f"{url}{separator}{VIATOR_AFFILIATE_PARAMS}"
 
     def _fetch_product_options(self, product_code: str, headers: dict) -> dict:
         """Fetch product options for a single product."""
@@ -192,7 +226,8 @@ class ViatorTopProductsTool(BaseTool):
                     code = options_futures[future]
                     try:
                         options_results[code] = future.result()
-                    except Exception:
+                    except Exception as e:
+                        logger.warning("Failed to fetch product options for %s: %s", code, e)
                         options_results[code] = {}
 
                 # Collect availability results
@@ -200,10 +235,11 @@ class ViatorTopProductsTool(BaseTool):
                     code = availability_futures[future]
                     try:
                         availability_results[code] = future.result()
-                    except Exception:
+                    except Exception as e:
+                        logger.warning("Failed to fetch availability for %s: %s", code, e)
                         availability_results[code] = {}
 
-            # Step 4: Assemble product data
+            # Step 4: Assemble product data with affiliate links
             product_data = []
             for value in products:
                 code = value['productCode']
@@ -217,6 +253,10 @@ class ViatorTopProductsTool(BaseTool):
                 availability_data = availability_results.get(code, {})
                 product_availabilities = self._process_availability(availability_data, start_date, end_date)
 
+                # Inject affiliate parameters into the product URL
+                raw_url = value.get('productUrl', '')
+                affiliate_url = self._append_affiliate_params(raw_url)
+
                 product_data.append({
                     'product_code': code,
                     'product_title': value['title'],
@@ -227,7 +267,7 @@ class ViatorTopProductsTool(BaseTool):
                     'product_price': value.get('pricing', {}),
                     'product_flags': value.get('flags', []),
                     'product_availability_and_pricing': product_availabilities,
-                    'product_url': value['productUrl'],
+                    'product_url': affiliate_url,
                     'ageBands': options_response.get('pricingInfo', {}).get('ageBands', [])
                 })
 
