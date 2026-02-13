@@ -15,6 +15,8 @@ class ItinerariesFinal():
             config=self.agents_config['research_agent'],
             verbose=True,
             allow_delegation=False,
+            max_iter=10,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', temperature=0.05)
         )
 
@@ -24,6 +26,8 @@ class ItinerariesFinal():
             config=self.agents_config['research_agent_viator'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', temperature=0.05)
         )
 
@@ -33,6 +37,8 @@ class ItinerariesFinal():
             config=self.agents_config['research_agent_weather'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', temperature=0.05)
         )
 
@@ -42,6 +48,8 @@ class ItinerariesFinal():
             config=self.agents_config['research_agent_web'],
             verbose=True,
             allow_delegation=False,
+            max_iter=8,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', temperature=0.05)
         )
 
@@ -51,6 +59,8 @@ class ItinerariesFinal():
             config=self.agents_config['itinerary_developer'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
@@ -60,6 +70,8 @@ class ItinerariesFinal():
             config=self.agents_config['itinerary_translator_and_writer'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
@@ -69,6 +81,8 @@ class ItinerariesFinal():
             config=self.agents_config['PR_director'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
@@ -78,6 +92,8 @@ class ItinerariesFinal():
             config=self.agents_config['Itinerary_Director'],
             verbose=True,
             allow_delegation=False,
+            max_iter=5,
+            max_retry_limit=2,
             llm=LLM(model='gpt-5.2', reasoning_effort='medium')
         )
 
@@ -148,6 +164,6 @@ class ItinerariesFinal():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
-            memory=True,
+            memory=False,
             cache=True
         )

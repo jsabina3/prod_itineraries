@@ -25,6 +25,10 @@ web_search_additional_research_task:
     The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}.
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked;
     {flight_data}.
+
+    IMPORTANT: You MUST complete this task in NO MORE THAN 5 tool calls. Combine multiple topics into each search query to be efficient.
+    For example, use broad queries like "{destination} travel guide hidden gems best areas cultural tips" and "{destination} best restaurants nightlife fun facts" 
+    instead of searching each topic individually. Once you have enough information, STOP searching and compile your answer immediately.
   expected_output: A truthful and complete list covering the following categories;
     1) Generic information about the destination.
     2) Best areas to explore by feet.
@@ -45,6 +49,10 @@ date_specific_events_task:
     The travellers are staying at {hotel_name}, which is at {hotel_address} and already booked for {names}.
     Is breakfast included in the hotel? {breakfast_included}. The flights are also booked;
     {flight_data}.
+
+    IMPORTANT: You MUST complete this task in NO MORE THAN 4 tool calls. Use a single comprehensive search query like 
+    "events concerts exhibitions festivals in {destination} {start_date} to {end_date}" to find all relevant events at once.
+    Once you have the results, STOP searching and compile your answer.
   expected_output: >
     A list of events/activities that run temporarily and that the travellers can enjoy during their stay, ordered chronologically from {start_date} to {end_date} and including the exact date(s) in which they run.
   async_execution: false

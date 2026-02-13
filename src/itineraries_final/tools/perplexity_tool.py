@@ -49,7 +49,7 @@ class RealTimeSearchTool(BaseTool):
                 "frequency_penalty": 1
             }
 
-            response = requests.post(url, headers=headers, json=data)
+            response = requests.post(url, headers=headers, json=data, timeout=60)
             response.raise_for_status()
             response_data = response.json()
 
