@@ -165,5 +165,6 @@ class ItinerariesFinal():
             process=Process.sequential,
             verbose=True,
             memory=False,
-            cache=True
+            cache=True,
+            max_rpm=30
         )
